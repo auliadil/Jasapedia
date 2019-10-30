@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,6 +29,7 @@ public class AddServiceActivity extends AppCompatActivity {
     private EditText etLocation;
     private EditText etHours;
     private EditText etPhoneNumber;
+    private SharedPreferences sharedpreference;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -49,16 +52,18 @@ public class AddServiceActivity extends AppCompatActivity {
         etHours = findViewById(R.id.et_service_hours);
         etPhoneNumber = findViewById(R.id.et_service_phone_number);
 
-        etCategory = (Spinner) findViewById(R.id.et_service_category);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.et_service_category, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        etCategory.setAdapter(adapter);
+//        etCategory = (Spinner) findViewById(R.id.et_service_category);
+//        // Create an ArrayAdapter using the string array and a default spinner layout
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.et_service_category, android.R.layout.simple_spinner_item);
+//        // Specify the layout to use when the list of choices appears
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        // Apply the adapter to the spinner
+//        etCategory.setAdapter(adapter);
 
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+        sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
         setTitle("Add Service");
     }
 
@@ -93,23 +98,27 @@ public class AddServiceActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.add_service_menu, menu);
-        return true;
+    public void onClickSave(View view){
+        saveService();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.save_service:
-                saveService();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.add_service_menu, menu);
+//        return true;
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.save_service:
+//                saveService();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
 
     class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
 

@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
         if (requestCode == ADD_SERVICE_REQUEST && resultCode == RESULT_OK) {
             String name = data.getStringExtra(AddServiceActivity.EXTRA_NAME);
             String overview = data.getStringExtra(AddServiceActivity.EXTRA_OVERVIEW);
-            double rating = Double.parseDouble(data.getStringExtra(AddServiceActivity.EXTRA_RATING));
+            double rating = 0;
             String category = data.getStringExtra(AddServiceActivity.EXTRA_CATEGORY);
             String location = data.getStringExtra(AddServiceActivity.EXTRA_LOCATION);
             String hours = data.getStringExtra(AddServiceActivity.EXTRA_HOURS);

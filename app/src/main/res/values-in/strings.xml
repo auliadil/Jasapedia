@@ -12,6 +12,7 @@
     <string name="home_services">Daftar Layanan</string>
 
     <!--  Add Service  -->
+    <string name="title_add_service">Tambah Layanan</string>
     <string name="label_name">Nama</string>
     <string name="label_overview">Ringkasan</string>
     <string name="label_rating">Penilaian</string>
@@ -29,6 +30,8 @@
     <string name="hint_hours">Silahkan masukkan jam kerja layanan</string>
     <string name="hint_phone_number">Silahkan masukkan nomor telepon layanan</string>
     <string name="hint_image">Silahkan unggah gambar layanan</string>
+
+    <string name="btn_save_service">Simpan</string>
 
     <!--  Service Details  -->
     <string name="details_overview">Ringkasan</string>

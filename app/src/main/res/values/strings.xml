@@ -11,6 +11,7 @@
     <string name="home_services">Services</string>
 
     <!--  Add Service  -->
+    <string name="title_add_service">Add Service</string>
     <string name="label_name">Name</string>
     <string name="label_overview">Overview</string>
     <string name="label_rating">Rating</string>
@@ -28,6 +29,8 @@
     <string name="hint_hours">Please enter the service hours</string>
     <string name="hint_phone_number">Please enter the service phone number</string>
     <string name="hint_image">Please upload the service image</string>
+
+    <string name="btn_save_service">Save</string>
 
     <string-array name="et_service_category">
         <item>Laundry</item>

@@ -61,10 +61,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.home_menu:
                 fragment = new HomeFragment();
                 break;
-            case R.id.add_menu:
-//                intent = new Intent(MainActivity.this, AddServiceActivity.class);
-                fragment = new AddFragment();
-                break;
             case R.id.bookings_menu:
 //                intent = new Intent(MainActivity.this, BookingsActivity.class);
                 fragment = new BookingsFragment();

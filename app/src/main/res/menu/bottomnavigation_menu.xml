@@ -7,11 +7,6 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/add_menu"
-        android:title="@string/add"
-        android:icon="@drawable/ic_add"/>
-
-    <item
         android:id="@+id/bookings_menu"
         android:title="@string/bookings"
         android:icon="@drawable/ic_bookings"/>
