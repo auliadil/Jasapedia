@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Jasapedia</string>
+
+    <!--  Navigation Bottom  -->
+    <string name="home">Home</string>
+    <string name="add">Add</string>
+    <string name="bookings">Bookings</string>
+    <string name="account">Account</string>
+
+    <!--  Home  -->
+    <string name="home_services">Services</string>
+
+    <!--  Add Service  -->
+    <string name="label_name">Name</string>
+    <string name="label_overview">Overview</string>
+    <string name="label_rating">Rating</string>
+    <string name="label_category">Service Category</string>
+    <string name="label_location">Location</string>
+    <string name="label_hours">Service Hours</string>
+    <string name="label_phone_number">Telephone Number</string>
+    <string name="label_image">Image</string>
+
+    <string name="hint_name">Please enter the service name</string>
+    <string name="hint_overview">Please enter the service overview</string>
+    <string name="hint_rating">Please enter the service rating</string>
+    <string name="hint_category">Please select the service category</string>
+    <string name="hint_location">Please enter the service location</string>
+    <string name="hint_hours">Please enter the service hours</string>
+    <string name="hint_phone_number">Please enter the service phone number</string>
+    <string name="hint_image">Please upload the service image</string>
+
+    <string-array name="et_service_category">
+        <item>Laundry</item>
+        <item>Auto Repair Shop</item>
+        <item>Cleaning Service</item>
+        <item>Beauty Clinic</item>
+        <item>Body Massage</item>
+        <item>Electronic Repair</item>
+        <item>Build and Construction</item>
+        <item>Architect</item>
+        <item>Law Firm</item>
+    </string-array>
+
+    <!--  Service Details  -->
+    <string name="details_overview">Overview</string>
+    <string name="details_information">Information</string>
+
+</resources>

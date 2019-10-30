@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jasapedia</string>
+
+    <!--  Navigation Bottom  -->
+    <string name="home">Beranda</string>
+    <string name="add">Tambah</string>
+    <string name="bookings">Pemesanan</string>
+    <string name="account">Akun</string>
+
+    <!--  Home  -->
+    <string name="home_services">Daftar Layanan</string>
+
+    <!--  Add Service  -->
+    <string name="label_name">Nama</string>
+    <string name="label_overview">Ringkasan</string>
+    <string name="label_rating">Penilaian</string>
+    <string name="label_category">Kategori Layanan</string>
+    <string name="label_location">Lokasi</string>
+    <string name="label_hours">Jam Kerja</string>
+    <string name="label_phone_number">Nomor Telepon</string>
+    <string name="label_image">Gambar</string>
+
+    <string name="hint_name">Silahkan masukkan nama layanan</string>
+    <string name="hint_overview">Silahkan masukkan ringkasan layanan</string>
+    <string name="hint_rating">Silahkan masukkan rating layanan</string>
+    <string name="hint_category">Silahkan pilih kategori layanan</string>
+    <string name="hint_location">Silahkan masukkan lokasi layanan</string>
+    <string name="hint_hours">Silahkan masukkan jam kerja layanan</string>
+    <string name="hint_phone_number">Silahkan masukkan nomor telepon layanan</string>
+    <string name="hint_image">Silahkan unggah gambar layanan</string>
+
+    <!--  Service Details  -->
+    <string name="details_overview">Ringkasan</string>
+    <string name="details_information">Informasi</string>
+
+</resources>
