@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddServiceActivity extends AppCompatActivity {
 
@@ -68,7 +69,7 @@ public class AddServiceActivity extends AppCompatActivity {
         if(etRating.getText() != null) {
             rating = Double.parseDouble(etRating.getText().toString());
         }
-        String category = etCategory.getContext().getText().toString();
+        String category = "";
         String location = etLocation.getText().toString();
         String hours = etHours.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
