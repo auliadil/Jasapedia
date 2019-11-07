@@ -15,6 +15,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+
+            <TextView
+                android:id="@+id/tv_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:layout_marginLeft="24px"
+                android:layout_marginTop="24px"
+                style="@style/Headline1"/>
+
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"

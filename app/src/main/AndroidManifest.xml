@@ -26,11 +26,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/SplashScreenStyle">
+            android:name=".SplashScreenActivity">
         </activity>
 
-        <receiver android:name=".AlertReceiver" />
+        <receiver android:name=".AlertReceiver"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

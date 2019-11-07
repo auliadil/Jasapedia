@@ -8,7 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="24px"
+        android:layout_marginTop="24px">
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -39,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Service Title"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"/>
+                    style="@style/Headline1"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -52,7 +54,7 @@
                         android:text="5.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+                        style="@style/Caption" />
 
                     <RatingBar
                         android:id="@+id/details_rating"
@@ -73,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Category Text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                    style="@style/Body2" />
 
                 <TextView
                     android:id="@+id/tv_overview"
@@ -81,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/details_overview"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+                    style="@style/Body1" />
 
                 <TextView
                     android:id="@+id/details_overview"
@@ -89,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Overview Text"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                    style="@style/Body2" />
 
                 <TextView
                     android:id="@+id/tv_information"
@@ -97,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/details_information"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+                    style="@style/Body1" />
 
                 <TextView
                     android:id="@+id/details_location"
@@ -109,7 +111,7 @@
                     android:text="Location Text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"/>
+                    style="@style/Body2"/>
 
                 <TextView
                     android:id="@+id/details_working_hours"
@@ -121,7 +123,7 @@
                     android:text="Working Hours Text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"/>
+                    style="@style/Body2"/>
 
                 <TextView
                     android:id="@+id/details_phone_number"
@@ -133,7 +135,7 @@
                     android:text="Phone Number Text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"/>
+                    style="@style/Body2"/>
 
                 <Button
                     android:id="@+id/btn_book_service"
@@ -142,7 +144,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginTop="24dp"
                     android:text="@string/btn_book"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
+                    style="@style/Body2"/>
 
             </LinearLayout>
 

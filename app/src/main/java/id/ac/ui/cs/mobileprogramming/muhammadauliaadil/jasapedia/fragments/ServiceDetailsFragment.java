@@ -9,16 +9,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddBookingActivity;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddServiceActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
+
+import static android.app.Activity.RESULT_OK;
 
 public class ServiceDetailsFragment extends Fragment {
     private Service service;
+    private BookingViewModel bookingViewModel;
+    public static final int ADD_BOOKING_REQUEST = 1;
 
     public ServiceDetailsFragment(Service service) {
         this.service = service;
@@ -74,5 +82,24 @@ public class ServiceDetailsFragment extends Fragment {
 //                .asBitmap()
 //                .load(service.getImageUrl())
 //                .into(image);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+            int serviceId = Integer.parseInt(data.getStringExtra(AddBookingActivity.BOOKING_SERVICE_ID));
+            String note = data.getStringExtra(AddBookingActivity.BOOKING_NOTE);
+            String date = data.getStringExtra(AddBookingActivity.BOOKING_DATE);
+            String time = data.getStringExtra(AddBookingActivity.BOOKING_TIME);
+
+            Booking booking = new Booking(serviceId, note, date, time);
+            bookingViewModel.insert(booking);
+
+            Toast.makeText(getContext(), "Booking saved", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getContext(), "Booking not saved", Toast.LENGTH_SHORT).show();
+        }
     }
 }
