@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -37,12 +38,12 @@ public class HomeFragment extends Fragment {
 
     private ServiceViewModel serviceViewModel;
     private RecyclerView recyclerView;
+    private ServiceAdapter adapter;
     public static final int ADD_SERVICE_REQUEST = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Nullable
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        getActivity().setTitle("Jasapedia");
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
 
-        final ServiceAdapter adapter = new ServiceAdapter();
+        adapter = new ServiceAdapter(getContext());
         recyclerView.setAdapter(adapter);
 
         serviceViewModel = ViewModelProviders.of(this).get(ServiceViewModel.class);
@@ -80,6 +81,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(List<Service> services) {
                 adapter.setServices(services);
+                adapter.notifyDataSetChanged();
             }
         });
     }
@@ -91,7 +93,7 @@ public class HomeFragment extends Fragment {
         if (requestCode == ADD_SERVICE_REQUEST && resultCode == RESULT_OK) {
             String name = data.getStringExtra(AddServiceActivity.EXTRA_NAME);
             String overview = data.getStringExtra(AddServiceActivity.EXTRA_OVERVIEW);
-            double rating = 0;
+            double rating = data.getDoubleExtra(AddServiceActivity.EXTRA_RATING, 0);
             String category = data.getStringExtra(AddServiceActivity.EXTRA_CATEGORY);
             String location = data.getStringExtra(AddServiceActivity.EXTRA_LOCATION);
             String hours = data.getStringExtra(AddServiceActivity.EXTRA_HOURS);

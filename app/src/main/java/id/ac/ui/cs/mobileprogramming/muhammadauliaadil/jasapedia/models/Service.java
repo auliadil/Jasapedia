@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,23 +8,33 @@ import androidx.room.PrimaryKey;
 public class Service {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
 
+    @ColumnInfo(name = "name")
     private String name;
 
+    @ColumnInfo(name = "overview")
     private String overview;
 
+    @ColumnInfo(name = "rating")
     private double rating;
 
+    @ColumnInfo(name = "category")
     private String category;
 
+    @ColumnInfo(name = "location")
     private String location;
 
+    @ColumnInfo(name = "hours")
     private String hours;
 
+    @ColumnInfo(name = "phone_number")
     private String phoneNumber;
 
+    @ColumnInfo(name = "image_url")
     private String imageUrl;
+
 
     public Service(String name, String overview, double rating, String category, String location, String hours, String phoneNumber) {
         this.name = name;
@@ -63,7 +74,7 @@ public class Service {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

@@ -133,7 +133,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_email_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -143,9 +143,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_arrow_back" />
-                            <entry key="sourceFile" value="$USER_HOME$" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="color" value="04568c" />
+                            <entry key="outputName" value="ic_logo_jasapedia" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/Logo Jasapedia.svg" />
                           </map>
                         </option>
                       </PersistentState>

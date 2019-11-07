@@ -26,6 +26,9 @@ public interface ServiceDao {
     @Query("DELETE FROM services")
     void deleteAllServices();
 
-    @Query("SELECT * FROM services ORDER BY name DESC")
+    @Query("SELECT * FROM services ORDER BY id ASC")
     LiveData<List<Service>> getAllServices();
+
+    @Query("SELECT * FROM services WHERE id = :id LIMIT 1")
+    LiveData<Service> getServiceById(int id);
 }

@@ -21,20 +21,37 @@
     <string name="label_hours">Jam Kerja</string>
     <string name="label_phone_number">Nomor Telepon</string>
     <string name="label_image">Gambar</string>
-
-    <string name="hint_name">Silahkan masukkan nama layanan</string>
-    <string name="hint_overview">Silahkan masukkan ringkasan layanan</string>
-    <string name="hint_rating">Silahkan masukkan rating layanan</string>
-    <string name="hint_category">Silahkan pilih kategori layanan</string>
-    <string name="hint_location">Silahkan masukkan lokasi layanan</string>
-    <string name="hint_hours">Silahkan masukkan jam kerja layanan</string>
-    <string name="hint_phone_number">Silahkan masukkan nomor telepon layanan</string>
-    <string name="hint_image">Silahkan unggah gambar layanan</string>
-
-    <string name="btn_save_service">Simpan</string>
+    <string name="btn_save">Simpan</string>
 
     <!--  Service Details  -->
+    <string name="title_service_details">Detail Layanan Jasa</string>
+    <string name="location">Lokasi</string>
+    <string name="working_hours">Jam Kerja</string>
+    <string name="phone_number">Nomor Telepon</string>
     <string name="details_overview">Ringkasan</string>
     <string name="details_information">Informasi</string>
+    <string name="btn_book">Pesan Layanan Ini</string>
+
+    <!--  Login  -->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Masuk atau buat akun</string>
+    <string name="action_sign_in_short">Masuk</string>
+    <string name="welcome">"Selamat datang !"</string>
+    <string name="invalid_username">Bukan username valid</string>
+    <string name="invalid_password">Password harus lebih dari 5 karakter</string>
+    <string name="login_failed">"Login gagal"</string>
+
+    <!--  Bookings  -->
+    <string name="bookings_services">Daftar Pemesanan Layanan</string>
+
+    <!--  Add Booking  -->
+    <string name="label_note">Catatan</string>
+    <string name="label_date">Tanggal</string>
+    <string name="label_time">Waktu</string>
+
+    <!--  Account  -->
+    <string name="btn_logout">Keluar</string>
 
 </resources>

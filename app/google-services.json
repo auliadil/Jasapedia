@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "155858529472",
+    "firebase_url": "https://jasapedia-110598.firebaseio.com",
+    "project_id": "jasapedia-110598",
+    "storage_bucket": "jasapedia-110598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155858529472:android:921825b57ffbef9e2c1125",
+        "android_client_info": {
+          "package_name": "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155858529472-pfm0701ebvpap55nt395bap8u2vjo0i3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtmeaRLCWamhGVynWaH2wr2psNnIUYihk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155858529472-pfm0701ebvpap55nt395bap8u2vjo0i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

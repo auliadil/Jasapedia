@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jasapedia</string>
 
@@ -17,35 +18,43 @@
     <string name="label_rating">Rating</string>
     <string name="label_category">Service Category</string>
     <string name="label_location">Location</string>
-    <string name="label_hours">Service Hours</string>
+    <string name="label_hours">Working Hours</string>
     <string name="label_phone_number">Telephone Number</string>
     <string name="label_image">Image</string>
-
-    <string name="hint_name">Please enter the service name</string>
-    <string name="hint_overview">Please enter the service overview</string>
-    <string name="hint_rating">Please enter the service rating</string>
-    <string name="hint_category">Please select the service category</string>
-    <string name="hint_location">Please enter the service location</string>
-    <string name="hint_hours">Please enter the service hours</string>
-    <string name="hint_phone_number">Please enter the service phone number</string>
-    <string name="hint_image">Please upload the service image</string>
-
-    <string name="btn_save_service">Save</string>
-
-    <string-array name="et_service_category">
-        <item>Laundry</item>
-        <item>Auto Repair Shop</item>
-        <item>Cleaning Service</item>
-        <item>Beauty Clinic</item>
-        <item>Body Massage</item>
-        <item>Electronic Repair</item>
-        <item>Build and Construction</item>
-        <item>Architect</item>
-        <item>Law Firm</item>
-    </string-array>
+    <string name="btn_save">Save</string>
 
     <!--  Service Details  -->
+    <string name="title_service_details">Service Details</string>
+    <string name="location">Location</string>
+    <string name="working_hours">Working Hours</string>
+    <string name="phone_number">Phone Number</string>
     <string name="details_overview">Overview</string>
     <string name="details_information">Information</string>
+    <string name="btn_book">Book This Service</string>
+
+    <!--  Login  -->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be more than 5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!--  Bookings  -->
+    <string name="bookings_services">Booked Services</string>
+
+    <!--  Add Booking  -->
+    <string name="label_note">Note</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Time</string>
+
+    <!--  Account  -->
+    <string name="btn_logout">Sign Out</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -8,9 +9,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,14 +38,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        Intent intent = new Intent(this, LoginActivity.class);
+//        startActivity(intent);
+
         loadFragment(new HomeFragment());
         navigationView = findViewById(R.id.bn_main);
-//        navigationView.setSelectedItemId(R.id.home_menu);
         navigationView.setOnNavigationItemSelectedListener(this);
 
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
     }
 
     private boolean loadFragment(Fragment fragment) {

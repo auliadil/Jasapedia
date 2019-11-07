@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,8 +26,8 @@ public class AddServiceActivity extends AppCompatActivity {
 
     private EditText etName;
     private EditText etOverview;
-    private EditText etRating;
-    private Spinner etCategory;
+    private RatingBar rbRating;
+    private EditText etCategory;
     private EditText etLocation;
     private EditText etHours;
     private EditText etPhoneNumber;
@@ -47,19 +49,11 @@ public class AddServiceActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.et_service_name);
         etOverview = findViewById(R.id.et_service_overview);
-        etRating = findViewById(R.id.et_service_rating);
+        rbRating = findViewById(R.id.rb_service_rating);
+        etCategory = findViewById(R.id.et_service_category);
         etLocation = findViewById(R.id.et_service_location);
         etHours = findViewById(R.id.et_service_hours);
         etPhoneNumber = findViewById(R.id.et_service_phone_number);
-
-//        etCategory = (Spinner) findViewById(R.id.et_service_category);
-//        // Create an ArrayAdapter using the string array and a default spinner layout
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.et_service_category, android.R.layout.simple_spinner_item);
-//        // Specify the layout to use when the list of choices appears
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        // Apply the adapter to the spinner
-//        etCategory.setAdapter(adapter);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 
@@ -68,21 +62,19 @@ public class AddServiceActivity extends AppCompatActivity {
     }
 
     private void saveService() {
-        String name = etName.getText().toString();
-        String overview = etOverview.getText().toString();
-        double rating = 0;
-        if(etRating.getText() != null) {
-            rating = Double.parseDouble(etRating.getText().toString());
-        }
-        String category = "";
-        String location = etLocation.getText().toString();
-        String hours = etHours.getText().toString();
-        String phoneNumber = etPhoneNumber.getText().toString();
 
-        if (name.trim().isEmpty() || overview.isEmpty() || rating == 0 || location.isEmpty() || hours.isEmpty() || phoneNumber.isEmpty() ) {
+        if (!validate()) {
             Toast.makeText(this, "Please insert full", Toast.LENGTH_LONG);
             return;
         }
+
+        String name = etName.getText().toString();
+        String overview = etOverview.getText().toString();
+        double rating = (double) rbRating.getRating();
+        String category = etCategory.getText().toString();
+        String location = etLocation.getText().toString();
+        String hours = etHours.getText().toString();
+        String phoneNumber = etPhoneNumber.getText().toString();
 
         Intent data = new Intent();
         data.putExtra(EXTRA_NAME, name);
@@ -98,27 +90,52 @@ public class AddServiceActivity extends AppCompatActivity {
 
     }
 
-    public void onClickSave(View view){
+    public void onClickSaveService(View view){
         saveService();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.add_service_menu, menu);
-//        return true;
-//    }
+    public boolean validate() {
+        boolean valid = true;
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.save_service:
-//                saveService();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+        String name = etName.getText().toString();
+        String overview = etOverview.getText().toString();
+        String category = etCategory.getText().toString();
+        String location = etLocation.getText().toString();
+        String hours = etHours.getText().toString();
+        String phoneNumber = etPhoneNumber.getText().toString();
+
+        if (name.isEmpty()) {
+            etName.setError("enter a valid name");
+            valid = false;
+        }
+
+        if (overview.isEmpty()) {
+            etOverview.setError("enter a valid overview");
+            valid = false;
+        }
+
+        if (category.isEmpty()) {
+            etCategory.setError("enter a valid category");
+            valid = false;
+        }
+
+        if (location.isEmpty()) {
+            etLocation.setError("enter a valid location");
+            valid = false;
+        }
+
+        if (hours.isEmpty()) {
+            etHours.setError("enter a valid location");
+            valid = false;
+        }
+
+        if (phoneNumber.isEmpty()) {
+            etPhoneNumber.setError("enter a valid name");
+            valid = false;
+        }
+
+        return valid;
+    }
 
     class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
 

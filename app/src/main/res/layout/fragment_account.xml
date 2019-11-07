@@ -3,14 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AccountFragment">
+    tools:context=".fragments.AccountFragment"
+    android:padding="8dp">
 
-<!--    <TextView-->
-<!--        android:id="@+id/tv_account"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:text="@string/account"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/opensans_extrabold"
+                android:text="User Name"
+                android:textSize="24sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="User Address"
+                android:textSize="14sp"
+                android:drawableLeft="@drawable/ic_location_blue"
+                android:drawablePadding="8dp" />
+
+            <TextView
+                android:id="@+id/user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="User Email"
+                android:textSize="14sp"
+                android:drawableLeft="@drawable/ic_email_blue"
+                android:drawablePadding="8dp" />
+
+            <TextView
+                android:id="@+id/user_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="User Phone Number"
+                android:textSize="14sp"
+                android:drawableLeft="@drawable/ic_phone_blue"
+                android:drawablePadding="8dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/btn_logout"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

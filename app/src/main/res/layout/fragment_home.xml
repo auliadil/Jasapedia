@@ -3,16 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintBottom_toTopOf="parent"
+    android:layout_marginBottom="40dp"
     tools:context=".fragments.HomeFragment">
 
     <TextView
         android:id="@+id/tv_services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/muli_bold"
         android:text="@string/home_services"
-        android:layout_marginLeft="16px"
-        android:layout_marginTop="16px"
+        android:layout_marginLeft="24px"
+        android:layout_marginTop="24px"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"  />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,7 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_services"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
+        android:layout_marginTop="48dp"
         tools:listitem="@layout/item_services"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -32,7 +36,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="40dp"
         android:src="@drawable/ic_add" />
 
 </FrameLayout>
