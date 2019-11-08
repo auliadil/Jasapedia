@@ -29,15 +29,9 @@
             android:name=".SplashScreenActivity">
         </activity>
 
-        <receiver android:name=".AlertReceiver"
-            android:directBootAware="true"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+        <receiver android:name=".AlertReceiver"/>
+
     </application>
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 </manifest>

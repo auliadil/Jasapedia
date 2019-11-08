@@ -2,22 +2,17 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import static androidx.room.ForeignKey.CASCADE;
-
-@Entity(tableName = "bookings", foreignKeys = @ForeignKey(entity = Service.class,
-        parentColumns = "id", childColumns = "service_id",
-        onUpdate = CASCADE, onDelete = CASCADE))
+@Entity(tableName = "bookings")
 public class Booking {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo(name = "service_id", index = true)
-    private int serviceId;
+    @ColumnInfo(name = "service_name")
+    private String serviceName;
 
     @ColumnInfo(name = "note")
     private String note;
@@ -28,8 +23,8 @@ public class Booking {
     @ColumnInfo(name = "time")
     private String time;
 
-    public Booking(int serviceId, String note, String date, String time) {
-        this.serviceId = serviceId;
+    public Booking(String serviceName, String note, String date, String time) {
+        this.serviceName = serviceName;
         this.note = note;
         this.date = date;
         this.time = time;
@@ -43,12 +38,12 @@ public class Booking {
         this.id = id;
     }
 
-    public int getServiceId() {
-        return serviceId;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
+    public void setServiceId(String serviceId) {
+        this.serviceName = serviceId;
     }
 
     public String getNote() {

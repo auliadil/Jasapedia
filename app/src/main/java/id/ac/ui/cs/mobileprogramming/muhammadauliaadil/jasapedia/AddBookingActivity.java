@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
@@ -25,10 +26,11 @@ import java.util.Calendar;
 import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.adapters.ServiceAdapter;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.databases.ServiceDatabase;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.DatePickerFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.TimePickerFragment;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
 public class AddBookingActivity extends AppCompatActivity implements View.OnClickListener, TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
@@ -42,7 +44,8 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     private Button btnDatePicker, btnTimePicker, btnSave, btnCancelAlarm;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private Calendar c;
-    private String serviceId;
+    private String serviceName;
+    private BookingViewModel bookingViewModel;
 
     public static final String BOOKING_SERVICE_ID = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.BOOKING_NOTE";
     public static final String BOOKING_NOTE = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.BOOKING_NOTE";
@@ -53,6 +56,9 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_booking);
+
+
+        bookingViewModel = ViewModelProviders.of(this).get(BookingViewModel.class);
 
         c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -107,8 +113,8 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
 
         Intent intent = getIntent();
 
-        serviceId = intent.getStringExtra("SERVICE_ID");
-        txtName.setText(intent.getStringExtra("SERVICE_NAME"));
+        serviceName = intent.getStringExtra("SERVICE_NAME");
+        txtName.setText(serviceName);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
@@ -153,11 +159,11 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         }
 
         if (v == btnSave) {
-            saveService();
+            saveBooking();
         }
     }
 
-    private void saveService() {
+    private void saveBooking() {
         if (!validate()) {
             Toast.makeText(this, "Please insert full", Toast.LENGTH_LONG);
             return;
@@ -165,19 +171,13 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         String note = txtNote.getText().toString();
         String date = txtDate.getText().toString();
         String time = txtTime.getText().toString();
-
-        Intent data = new Intent();
-        data.putExtra(BOOKING_SERVICE_ID, serviceId);
-        data.putExtra(BOOKING_NOTE, note);
-        data.putExtra(BOOKING_DATE, date);
-        data.putExtra(BOOKING_TIME, time);
-
-        setResult(RESULT_OK, data);
-
         Log.d("TimeMillis","time in millis: " + c.getTimeInMillis() + " and time in timezone: " + c.getTimeZone());
-
         startAlarm(c);
         finish();
+        Log.d("ActivityResult", "muncul");
+        Booking booking = new Booking(serviceName, note, date, time);
+        bookingViewModel.insert(booking);
+        Toast.makeText(this, "Booking saved", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -195,6 +195,14 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
+    }
+
+    private void startAlarm(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     public boolean validate() {
@@ -225,33 +233,6 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
             valid = false;
         }
         return valid;
-    }
-
-
-//    @Override
-//    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//        Calendar c = Calendar.getInstance();
-//        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
-//        c.set(Calendar.MINUTE, minute);
-//        c.set(Calendar.SECOND, 0);
-//
-//        updateTimeText(c);
-//        startAlarm(c);
-//    }
-//
-//    private void updateTimeText(Calendar c) {
-//        String timeText = "Alarm set for: ";
-//        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
-//
-//        etBookingTime.setText(timeText);
-//    }
-
-    private void startAlarm(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     private void cancelAlarm() {

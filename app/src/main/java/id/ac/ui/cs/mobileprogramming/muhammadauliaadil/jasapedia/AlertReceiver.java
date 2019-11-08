@@ -3,6 +3,8 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+
 import androidx.core.app.NotificationCompat;
 
 

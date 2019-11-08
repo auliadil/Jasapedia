@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +67,8 @@ public class ServiceDetailsFragment extends Fragment {
 
         ImageView image = getView().findViewById(R.id.details_image);
 
+        Log.d("IdDetails", String.valueOf(service.getId()));
+
         Button btnBookService = getView().findViewById(R.id.btn_book_service);
         btnBookService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,22 +87,25 @@ public class ServiceDetailsFragment extends Fragment {
 //                .into(image);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        Log.d("ActivityResult", "muncul");
+//
+//        if (resultCode == RESULT_OK) {
+//            int serviceId = Integer.parseInt(data.getStringExtra(AddBookingActivity.BOOKING_SERVICE_ID));
+//            String note = data.getStringExtra(AddBookingActivity.BOOKING_NOTE);
+//            String date = data.getStringExtra(AddBookingActivity.BOOKING_DATE);
+//            String time = data.getStringExtra(AddBookingActivity.BOOKING_TIME);
+//
+//            Booking booking = new Booking(serviceId, note, date, time);
+//            bookingViewModel.insert(booking);
+//
+//            Toast.makeText(getContext(), "Booking saved", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(getContext(), "Booking not saved", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
-        if (resultCode == RESULT_OK) {
-            int serviceId = Integer.parseInt(data.getStringExtra(AddBookingActivity.BOOKING_SERVICE_ID));
-            String note = data.getStringExtra(AddBookingActivity.BOOKING_NOTE);
-            String date = data.getStringExtra(AddBookingActivity.BOOKING_DATE);
-            String time = data.getStringExtra(AddBookingActivity.BOOKING_TIME);
-
-            Booking booking = new Booking(serviceId, note, date, time);
-            bookingViewModel.insert(booking);
-
-            Toast.makeText(getContext(), "Booking saved", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getContext(), "Booking not saved", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

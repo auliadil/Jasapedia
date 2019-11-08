@@ -3,22 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BookingsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintBottom_toTopOf="parent"
+    android:layout_marginBottom="40dp"
+    tools:context=".fragments.HomeFragment">
 
     <TextView
-        android:id="@+id/tv_booked_services"
+        android:id="@+id/tv_bookings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bookings_services"
-        android:layout_marginLeft="16px"
-        android:layout_marginTop="16px"
-        style="@style/Headline1" />
+        android:text="@string/bookings"
+        android:layout_marginLeft="24px"
+        android:layout_marginTop="24px"
+        style="@style/Headline1"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tv_booked_services"
+        android:layout_below="@+id/tv_bookings"
         android:layout_marginLeft="24px"
         android:layout_marginRight="24px"
         android:layout_marginTop="48dp"

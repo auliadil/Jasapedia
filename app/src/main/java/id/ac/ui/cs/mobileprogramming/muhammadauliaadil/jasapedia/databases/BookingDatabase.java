@@ -13,7 +13,7 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.daos.BookingDao
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 
-@Database(entities = {Booking.class, Service.class}, version = 1, exportSchema = false)
+@Database(entities = {Booking.class}, version = 3, exportSchema = false)
 public abstract class BookingDatabase extends RoomDatabase {
     private static BookingDatabase instance;
 
