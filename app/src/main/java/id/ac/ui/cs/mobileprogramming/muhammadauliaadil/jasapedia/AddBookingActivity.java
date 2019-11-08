@@ -80,30 +80,6 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
         btnSave.setOnClickListener(this);
-
-
-//        btnDatePicker.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-//
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//                        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-//                    }
-//                }, mYear, mMonth, mDay);
-//                datePickerDialog.show();
-//            });
-//        });
-
-//        btnTimePicker.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DialogFragment timePicker = new TimePickerFragment();
-//                timePicker.show(getSupportFragmentManager(), "time picker");
-//            }
-//        });
-
         btnCancelAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,36 +100,10 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
 
         if (v == btnDatePicker) {
-
-//            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-//                new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-//                        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-//                        c.set(Calendar.YEAR, year);
-//                        c.set(Calendar.MONTH, monthOfYear);
-//                        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//                    }
-//                }, mYear, mMonth, mDay);
-//            datePickerDialog.show();
-
             DialogFragment datePicker = new DatePickerFragment();
             datePicker.show(getSupportFragmentManager(), "date picker");
         }
         if (v == btnTimePicker) {
-
-            // Launch Time Picker Dialog
-//            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-//                new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//                        txtTime.setText(hourOfDay + ":" + minute);
-//                        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
-//                        c.set(Calendar.MINUTE, minute);
-//                        c.set(Calendar.SECOND, 0);
-//                    }
-//                }, mHour, mMinute, false);
-//            timePickerDialog.show();
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(), "time picker");
         }

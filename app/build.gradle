@@ -22,7 +22,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation "com.android.support:support-compat:28.0.0"
+    implementation 'androidx.core:core:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // for navigation
@@ -110,6 +110,9 @@ dependencies {
     // Login dan Sign Up
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    // Biar Spinnernya bagus
+    implementation 'com.github.ganfra:material-spinner:2.0.0'
 
 }
 

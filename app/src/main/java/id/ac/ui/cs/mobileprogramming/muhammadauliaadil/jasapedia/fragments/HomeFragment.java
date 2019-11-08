@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment {
             Service service = new Service(name, overview, rating, category, location, hours, phoneNumber);
             serviceViewModel.insert(service);
 
-            Toast.makeText(getContext(), "Service saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Service saved and contact added to your device", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getContext(), "Service not saved", Toast.LENGTH_SHORT).show();
         }

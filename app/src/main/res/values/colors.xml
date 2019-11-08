@@ -7,4 +7,11 @@
     <!--  Navigation Bottom  -->
     <color name="colorNavigationIcon">#dae9f6</color>
     <color name="colorNavigationText">#ffffff</color>
+
+
+    <!--  Spinner Color  -->
+    <color name="disabled_color">#44000000</color>
+    <color name="error_color">#E7492E</color>
+    <color name="spinner_base_color">#44000000</color>
+    <color name="spinner_hint_text_color">#ffffcc</color>
 </resources>
