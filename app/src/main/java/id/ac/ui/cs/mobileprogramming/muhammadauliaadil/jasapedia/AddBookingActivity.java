@@ -35,7 +35,8 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
-public class AddBookingActivity extends AppCompatActivity implements View.OnClickListener, TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+public class AddBookingActivity extends AppCompatActivity implements View.OnClickListener, TimePickerDialog.OnTimeSetListener,
+        DatePickerDialog.OnDateSetListener {
 
     private TextView txtName;
     private SharedPreferences sharedpreference;
@@ -49,17 +50,15 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     private String serviceName;
     private BookingViewModel bookingViewModel;
 
-    public static final String BOOKING_SERVICE_ID = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.BOOKING_NOTE";
-    public static final String BOOKING_NOTE = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.BOOKING_NOTE";
-    public static final String BOOKING_DATE = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
-    public static final String BOOKING_TIME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_RATING";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_booking);
+        init();
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+    }
 
-
+    public void init() {
         bookingViewModel = ViewModelProviders.of(this).get(BookingViewModel.class);
 
         c = Calendar.getInstance();
@@ -68,7 +67,6 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         mDay = c.get(Calendar.DAY_OF_MONTH);
         mHour = c.get(Calendar.HOUR_OF_DAY);
         mMinute = c.get(Calendar.MINUTE);
-
 
         btnDatePicker = findViewById(R.id.btn_datepicker);
         btnTimePicker = findViewById(R.id.btn_timepicker);
@@ -95,7 +93,6 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         txtName.setText(serviceName);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
     }
 
     @Override
@@ -150,26 +147,13 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
     }
 
-//    private void startAlarm(Calendar c) {
-//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-//        Intent intent = new Intent(this, AlertReceiver.class);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-//        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-//        Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show();
-//    }
-
     private void startAlarm(String serviceName, Calendar cal){
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getApplicationContext(), AlertReceiver.class);
         intent.putExtra("serviceName", serviceName);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Log.d("alarm", "startAlarm: starting.......");
-            Log.d("alarm", "startAlarm: millis........."+ cal.getTimeInMillis());
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
-//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis() + 5000,1000, pendingIntent);
-            Log.d("alarm", "startAlarm: zz...........");
-        }
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
     }
 
     public boolean validate() {

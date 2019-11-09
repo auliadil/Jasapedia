@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -38,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
-
         signupLink.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -53,23 +51,18 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login() {
         Log.d(TAG, "Login");
-
         if (!validate()) {
             onLoginFailed();
             return;
         }
-
         loginButton.setEnabled(false);
-
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
                 R.style.AppTheme);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
-
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
-
         new android.os.Handler().postDelayed(
             new Runnable() {
                 public void run() {

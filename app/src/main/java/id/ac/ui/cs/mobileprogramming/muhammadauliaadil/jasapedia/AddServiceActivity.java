@@ -58,6 +58,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     private Button btnUploadImage, btnSave;
     private ImageView holderImage;
     final int REQUEST_CODE_GALLERY = 999;
+    final int REQUEST_CODE_CONTACT = 888;
     private Uri selectedUri;
     private Intent data;
     private TextView textViewResult;
@@ -75,7 +76,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
-        MediaManager.init(this);
 
         init();
 
@@ -95,7 +95,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         ActivityCompat.requestPermissions(
                 AddServiceActivity.this,
                 new String[]{Manifest.permission.WRITE_CONTACTS},
-                REQUEST_CODE_GALLERY
+                REQUEST_CODE_CONTACT
         );
         btnSave = findViewById(R.id.save_service);
 
@@ -126,28 +126,20 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                 .build();
 
         YelpApi yelpAPI = retrofit.create(YelpApi.class);
-
         Call<ListCategory> call = yelpAPI.getCategories();
-
         call.enqueue(new Callback<ListCategory>() {
             @Override
             public void onResponse(Call<ListCategory> call, Response<ListCategory> response) {
-
                 if (!response.isSuccessful()) {
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
-
                 ListCategory listCategory = response.body();
-
                 List<String> categories = new ArrayList<String>();
-
                 for (Category category : listCategory.getCategories()) {
                     categories.add(category.getTitle());
                 }
-
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, categories);
-
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 categorySpinner.setAdapter(adapter);
             }
@@ -269,7 +261,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         setResult(RESULT_OK, data);
         saveContact();
         finish();
-
     }
 
     public void saveContact() {
@@ -280,7 +271,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String phoneNumber = etPhoneNumber.getText().toString();
         String phoneTypeStr = (String) phoneNumberTypeSpinner.getSelectedItem();
         insertContactPhoneNumber(addContactsUri, rowContactId, phoneNumber, phoneTypeStr);
-
     }
 
     private long getRawContactId() {
@@ -289,7 +279,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         long ret = ContentUris.parseId(rawContactUri);
         return ret;
     }
-
 
     private void insertContactDisplayName(Uri addContactsUri, long rawContactId, String displayName) {
         ContentValues contentValues = new ContentValues();
