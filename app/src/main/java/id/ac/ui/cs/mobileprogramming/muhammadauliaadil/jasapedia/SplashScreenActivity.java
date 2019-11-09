@@ -9,6 +9,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.SplashTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         new android.os.Handler().postDelayed(

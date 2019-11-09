@@ -1,49 +1,63 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.core.app.ActivityCompat;
 
-import android.app.Activity;
-import android.content.ContentProviderOperation;
-import android.content.ContentProviderResult;
+import android.Manifest;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.OperationApplicationException;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.cloudinary.android.MediaManager;
+import com.cloudinary.android.callback.ErrorInfo;
+import com.cloudinary.android.callback.UploadCallback;
 
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Map;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
-public class AddServiceActivity extends AppCompatActivity {
+
+public class AddServiceActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etName, etOverview, etCategory, etLocation, etHours, etPhoneNumber;
     private RatingBar rbRating;
     private SharedPreferences sharedpreference;
     private Spinner phoneTypeSpinner;
+    private ProgressBar progressBar;
+    private Button btnUploadImage, btnSave;
+    private ImageView holderImage;
+    private int SELECT_IMAGE = 1;
+    final int REQUEST_CODE_GALLERY = 999;
+    private Uri selectedUri;
+    private String cloudinaryUrl;
+    private Intent data;
+
+    private ServiceViewModel serviceViewModel;
+
+    private int counter = 0;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -52,13 +66,21 @@ public class AddServiceActivity extends AppCompatActivity {
     public static final String EXTRA_LOCATION = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_LOCATION";
     public static final String EXTRA_HOURS = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_HOURS";
     public static final String EXTRA_PHONE_NUMBER = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_PHONE_NUMBER";
+    public static final String EXTRA_IMAGE_URL = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_IMAGE_URL";
 
-    BottomNavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
+        MediaManager.init(this);
 
+        init();
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+        setTitle("Add Service");
+    }
+
+    public void init() {
         etName = findViewById(R.id.et_service_name);
         etOverview = findViewById(R.id.et_service_overview);
         rbRating = findViewById(R.id.rb_service_rating);
@@ -66,6 +88,7 @@ public class AddServiceActivity extends AppCompatActivity {
         etLocation = findViewById(R.id.et_service_location);
         etHours = findViewById(R.id.et_service_hours);
         etPhoneNumber = findViewById(R.id.et_service_phone_number);
+        btnSave = findViewById(R.id.save_service);
 
         // Initialize phone type dropdown spinner.
         phoneTypeSpinner = (MaterialSpinner)findViewById(R.id.spinner_type);
@@ -75,8 +98,63 @@ public class AddServiceActivity extends AppCompatActivity {
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-        setTitle("Add Service");
+        //  Upload Image via Cloudenary
+        holderImage = findViewById(R.id.image_uploaded);
+
+        progressBar = findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.INVISIBLE);
+        btnUploadImage = findViewById(R.id.upload_image);
+
+        btnUploadImage.setOnClickListener(this);
+        btnSave.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == btnUploadImage) {
+            Log.d("UploadImage", "button upload clicked");
+            ActivityCompat.requestPermissions(
+                    AddServiceActivity.this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    REQUEST_CODE_GALLERY
+            );
+
+        }
+        if (v == btnSave) {
+            saveService();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == REQUEST_CODE_GALLERY){
+            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_CODE_GALLERY);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == REQUEST_CODE_GALLERY && resultCode == RESULT_OK && data != null){
+            selectedUri = data.getData();
+
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(selectedUri);
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                holderImage.setImageBitmap(bitmap);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void saveService() {
@@ -94,7 +172,7 @@ public class AddServiceActivity extends AppCompatActivity {
         String hours = etHours.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
 
-        Intent data = new Intent();
+        data = new Intent();
         data.putExtra(EXTRA_NAME, name);
         data.putExtra(EXTRA_OVERVIEW, overview);
         data.putExtra(EXTRA_RATING, rating);
@@ -105,28 +183,54 @@ public class AddServiceActivity extends AppCompatActivity {
 
         setResult(RESULT_OK, data);
 
+
+        MediaManager.get().upload(selectedUri)
+                .unsigned("ph8w3u5h")
+                .option("resource_type", "image")
+                .callback(new UploadCallback() {
+                    @Override
+                    public void onStart(String requestId) {
+                        progressBar.setVisibility(View.VISIBLE);
+                        Toast.makeText(AddServiceActivity.this,"Upload has started...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onProgress(String requestId, long bytes, long totalBytes) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String requestId, Map resultData) {
+                        Toast.makeText(AddServiceActivity.this, "Uploaded Succesfully", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                        cloudinaryUrl = resultData.get("secure_url").toString();
+                        Log.d("CLOUDINARY", "onSuccess: succeed");
+                        Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl);
+
+                        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl);
+                    }
+
+                    @Override
+                    public void onError(String requestId, ErrorInfo error) {
+                        Toast.makeText(AddServiceActivity.this,"Upload Error", Toast.LENGTH_SHORT).show();
+                        Log.v("ERROR!!", error.getDescription());
+
+                    }
+
+                    @Override
+                    public void onReschedule(String requestId, ErrorInfo error) {
+
+                    }
+                }).dispatch();
+
         saveContact();
         finish();
 
     }
 
-    public void onClickSaveService(View view){
-        saveService();
-    }
-
     public void saveContact() {
-//        // Get query phone contacts cursor object.
-//        Uri readContactsUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-//        Cursor cursor = getContentResolver().query(readContactsUri, null, null, null, null);
-//
-//        // Inser an empty contact.
-//        ContentValues contentValues = new ContentValues();
-//        Uri rawContactUri = getContentResolver().insert(ContactsContract.RawContacts.CONTENT_URI, contentValues);
-//        // Get the newly created contact raw id.
-//        long ret = ContentUris.parseId(rawContactUri);
-
         // Get android phone contact content provider uri.
-        //Uri addContactsUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+        // Uri addContactsUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
         // Below uri can avoid java.lang.UnsupportedOperationException: URI: content://com.android.contacts/data/phones error.
         Uri addContactsUri = ContactsContract.Data.CONTENT_URI;
 
@@ -146,8 +250,7 @@ public class AddServiceActivity extends AppCompatActivity {
 
     // This method will only insert an empty data to RawContacts.CONTENT_URI
     // The purpose is to get a system generated raw contact id.
-    private long getRawContactId()
-    {
+    private long getRawContactId() {
         // Inser an empty contact.
         ContentValues contentValues = new ContentValues();
         Uri rawContactUri = getContentResolver().insert(ContactsContract.RawContacts.CONTENT_URI, contentValues);
@@ -158,10 +261,8 @@ public class AddServiceActivity extends AppCompatActivity {
 
 
     // Insert newly created contact display name.
-    private void insertContactDisplayName(Uri addContactsUri, long rawContactId, String displayName)
-    {
+    private void insertContactDisplayName(Uri addContactsUri, long rawContactId, String displayName) {
         ContentValues contentValues = new ContentValues();
-
         contentValues.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
 
         // Each contact must has an mime type to avoid java.lang.IllegalArgumentException: mimetype is required error.
@@ -174,8 +275,7 @@ public class AddServiceActivity extends AppCompatActivity {
 
     }
 
-    private void insertContactPhoneNumber(Uri addContactsUri, long rawContactId, String phoneNumber, String phoneTypeStr)
-    {
+    private void insertContactPhoneNumber(Uri addContactsUri, long rawContactId, String phoneNumber, String phoneTypeStr) {
         // Create a ContentValues object.
         ContentValues contentValues = new ContentValues();
 

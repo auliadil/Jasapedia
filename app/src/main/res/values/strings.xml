@@ -21,6 +21,7 @@
     <string name="label_hours">Working Hours</string>
     <string name="label_phone_number">Telephone Number</string>
     <string name="label_image">Image</string>
+    <string name="btn_upload_image">Upload Image</string>
     <string name="btn_save">Save</string>
 
     <!--  Service Details  -->

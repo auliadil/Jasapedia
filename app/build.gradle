@@ -71,7 +71,7 @@ dependencies {
     // alternatively - just LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     // alternatively - Lifecycles only (no ViewModel or LiveData). Some UI
-    //     AndroidX libraries use this lightweight import for Lifecycle
+    // AndroidX libraries use this lightweight import for Lifecycle
     implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
 
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
@@ -113,6 +113,11 @@ dependencies {
 
     // Biar Spinnernya bagus
     implementation 'com.github.ganfra:material-spinner:2.0.0'
+
+
+    // Cloudinary
+    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.22.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
 }
 

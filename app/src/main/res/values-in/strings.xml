@@ -21,6 +21,7 @@
     <string name="label_hours">Jam Kerja</string>
     <string name="label_phone_number">Nomor Telepon</string>
     <string name="label_image">Gambar</string>
+    <string name="btn_upload_image">Unggah Gambar</string>
     <string name="btn_save">Simpan</string>
 
     <!--  Service Details  -->
