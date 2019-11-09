@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cloudinary.android.MediaManager;
@@ -33,9 +34,14 @@ import com.cloudinary.android.callback.UploadCallback;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class AddServiceActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,10 +55,8 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     private ImageView holderImage;
     final int REQUEST_CODE_GALLERY = 999;
     private Uri selectedUri;
-    private String cloudinaryUrl;
     private Intent data;
-
-    private ServiceViewModel serviceViewModel;
+    private TextView textViewResult;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -99,6 +103,43 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
         btnUploadImage.setOnClickListener(this);
         btnSave.setOnClickListener(this);
+
+        // Initialize Retrofit
+        textViewResult = findViewById(R.id.text_view_result);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.yelp.com/v3/categories/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        YelpApi yelpAPI = retrofit.create(YelpApi.class);
+
+        Call<List<Category>> call = yelpAPI.getCategories("Bearer FRnunewLKg1nM6GG-Hay6OxeyrDvonUl8Suowa42sQi6E8A53dHMz6zXXXlDhXfZ60HeNcx2V8-4oG_6YaXJctK8rcmjukMAXk86ahbPI8BgCK9iq2bdPQW0VabGXXYx");
+
+        call.enqueue(new Callback<List<Category>>() {
+            @Override
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+
+                if (!response.isSuccessful()) {
+                    textViewResult.setText("Code: " + response.code());
+                    return;
+                }
+
+                List<Category> categories = response.body();
+
+                for (Category category : categories) {
+                    String content = "";
+                    content += "ID: " + category.getId() + "\n";
+                    content += "Title: " + category.getTitle() + "\n\n";
+
+                    textViewResult.append(content);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Category>> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+            }
+        });
     }
 
     @Override
@@ -163,6 +204,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String location = etLocation.getText().toString();
         String hours = etHours.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
+        final String[] cloudinaryUrl = new String[1];
 
         data = new Intent();
         data.putExtra(EXTRA_NAME, name);
@@ -173,8 +215,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         data.putExtra(EXTRA_HOURS, hours);
         data.putExtra(EXTRA_PHONE_NUMBER, phoneNumber);
 
-        setResult(RESULT_OK, data);
-
         MediaManager.get().upload(selectedUri)
                 .unsigned("ph8w3u5h")
                 .option("resource_type", "image")
@@ -182,7 +222,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onStart(String requestId) {
                         progressBar.setVisibility(View.VISIBLE);
-                        Toast.makeText(AddServiceActivity.this,"Upload has started...", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -192,12 +231,9 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
-                        Toast.makeText(AddServiceActivity.this, "Uploaded Succesfully", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
-                        cloudinaryUrl = resultData.get("secure_url").toString();
-                        Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl);
-
-                        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl);
+                        cloudinaryUrl[0] = resultData.get("secure_url").toString();
+                        Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl[0]);
                     }
 
                     @Override
@@ -213,88 +249,55 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     }
                 }).dispatch();
 
+        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
+        setResult(RESULT_OK, data);
         saveContact();
         finish();
 
     }
 
     public void saveContact() {
-        // Get android phone contact content provider uri.
-        // Uri addContactsUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-        // Below uri can avoid java.lang.UnsupportedOperationException: URI: content://com.android.contacts/data/phones error.
         Uri addContactsUri = ContactsContract.Data.CONTENT_URI;
-
-        // Add an empty contact and get the generated id.
         long rowContactId = getRawContactId();
-
-        // Add contact name data.
         String displayName = etName.getText().toString();
         insertContactDisplayName(addContactsUri, rowContactId, displayName);
-
-        // Add contact phone data.
         String phoneNumber = etPhoneNumber.getText().toString();
         String phoneTypeStr = (String)phoneTypeSpinner.getSelectedItem();
         insertContactPhoneNumber(addContactsUri, rowContactId, phoneNumber, phoneTypeStr);
 
     }
 
-    // This method will only insert an empty data to RawContacts.CONTENT_URI
-    // The purpose is to get a system generated raw contact id.
     private long getRawContactId() {
-        // Inser an empty contact.
         ContentValues contentValues = new ContentValues();
         Uri rawContactUri = getContentResolver().insert(ContactsContract.RawContacts.CONTENT_URI, contentValues);
-        // Get the newly created contact raw id.
         long ret = ContentUris.parseId(rawContactUri);
         return ret;
     }
 
 
-    // Insert newly created contact display name.
     private void insertContactDisplayName(Uri addContactsUri, long rawContactId, String displayName) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-
-        // Each contact must has an mime type to avoid java.lang.IllegalArgumentException: mimetype is required error.
         contentValues.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);
-
-        // Put contact display name value.
         contentValues.put(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, displayName);
-
         getContentResolver().insert(addContactsUri, contentValues);
-
     }
 
     private void insertContactPhoneNumber(Uri addContactsUri, long rawContactId, String phoneNumber, String phoneTypeStr) {
-        // Create a ContentValues object.
         ContentValues contentValues = new ContentValues();
-
-        // Each contact must has an id to avoid java.lang.IllegalArgumentException: raw_contact_id is required error.
         contentValues.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-
-        // Each contact must has an mime type to avoid java.lang.IllegalArgumentException: mimetype is required error.
         contentValues.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-
-        // Put phone number value.
         contentValues.put(ContactsContract.CommonDataKinds.Phone.NUMBER, phoneNumber);
-
-        // Calculate phone type by user selection.
         int phoneContactType = ContactsContract.CommonDataKinds.Phone.TYPE_HOME;
 
-        if("home".equalsIgnoreCase(phoneTypeStr))
-        {
+        if("home".equalsIgnoreCase(phoneTypeStr)) {
             phoneContactType = ContactsContract.CommonDataKinds.Phone.TYPE_HOME;
-        }else if("mobile".equalsIgnoreCase(phoneTypeStr))
-        {
+        } else if("mobile".equalsIgnoreCase(phoneTypeStr)) {
             phoneContactType = ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE;
-        }else if("work".equalsIgnoreCase(phoneTypeStr))
-        {
+        } else if("work".equalsIgnoreCase(phoneTypeStr)) {
             phoneContactType = ContactsContract.CommonDataKinds.Phone.TYPE_WORK;
         }
-        // Put phone type value.
         contentValues.put(ContactsContract.CommonDataKinds.Phone.TYPE, phoneContactType);
-
-        // Insert new contact data into phone contact list.
         getContentResolver().insert(addContactsUri, contentValues);
 
     }

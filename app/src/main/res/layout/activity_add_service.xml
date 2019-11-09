@@ -110,11 +110,20 @@
                 android:hint="@string/label_category" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_result"
+            />
+
         <ImageView
             android:id="@+id/image_uploaded"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="120dp"
             android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:text="@string/image_info"
             />
 
         <Button

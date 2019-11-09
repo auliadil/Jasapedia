@@ -86,8 +86,6 @@ public class SignupActivity extends AppCompatActivity {
         String password = passwordText.getText().toString();
         String reEnterPassword = reEnterPasswordText.getText().toString();
 
-        // TODO: Implement your own signup logic here.
-
         Intent data = new Intent();
         data.putExtra(USER_NAME, name);
         data.putExtra(USER_ADDRESS, address);

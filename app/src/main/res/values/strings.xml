@@ -28,6 +28,7 @@
         <item>Home</item>
         <item>Work</item>
     </string-array>
+    <string name="image_info">No photos uploaded yet</string>
 
 
     <!--  Service Details  -->
@@ -60,8 +61,5 @@
 
     <!--  Account  -->
     <string name="btn_logout">Sign Out</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

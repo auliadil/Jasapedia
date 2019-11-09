@@ -30,6 +30,9 @@ public class ServiceDetailsFragment extends Fragment {
     private Service service;
     private BookingViewModel bookingViewModel;
     public static final int ADD_BOOKING_REQUEST = 1;
+    private TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText;
+    private RatingBar rating;
+    private ImageView image;
 
     public ServiceDetailsFragment(Service service) {
         this.service = service;
@@ -50,9 +53,6 @@ public class ServiceDetailsFragment extends Fragment {
     }
 
     private void setService(final Service service){
-        TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText;
-        RatingBar rating;
-        ImageView image;
 
         nameText = getView().findViewById(R.id.details_name);
         nameText.setText(service.getName());
@@ -72,9 +72,14 @@ public class ServiceDetailsFragment extends Fragment {
         phoneNumberText.setText(service.getPhoneNumber());
         image = getView().findViewById(R.id.details_image);
 
+        String text = service.getImageUrl();
+
+        if(text != null)  Log.d("cloudinaryUrl", text);
+
         Glide.with(this)
                 .asBitmap()
                 .load(service.getImageUrl())
+                .fitCenter()
                 .into(image);
 
         Log.d("IdDetails", String.valueOf(service.getId()));

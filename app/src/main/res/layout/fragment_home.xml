@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     app:layout_constraintBottom_toTopOf="parent"
     android:layout_marginBottom="42dp"
-    android:layout_marginLeft="16px"
-    android:layout_marginRight="16px"
     tools:context=".fragments.HomeFragment">
 
     <TextView
@@ -15,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home_services"
-        android:layout_marginLeft="24px"
+        android:layout_marginLeft="40px"
         android:layout_marginTop="24px"
+        android:layout_marginRight="16px"
         style="@style/Headline1"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -24,8 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_services"
-        android:layout_marginLeft="24px"
-        android:layout_marginRight="24px"
         android:layout_marginTop="48dp"
         tools:listitem="@layout/item_services"/>
 
@@ -35,9 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/ic_add" />
 

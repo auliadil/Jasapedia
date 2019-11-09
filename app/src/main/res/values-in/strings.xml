@@ -28,6 +28,7 @@
         <item>Rumah</item>
         <item>Kerja</item>
     </string-array>
+    <string name="image_info">Belum ada foto yang diunggah</string>
 
     <!--  Service Details  -->
     <string name="title_service_details">Detail Layanan Jasa</string>
