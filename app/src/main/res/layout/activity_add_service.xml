@@ -86,11 +86,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <fr.ganfra.materialspinner.MaterialSpinner
+            <Spinner
                 android:id="@+id/spinner_type"
                 android:layout_width="match_parent"
-                android:layout_height="78dp"
-                android:layout_weight="0.65" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.65"
+                android:entries="@array/phone_types"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 

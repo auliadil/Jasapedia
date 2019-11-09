@@ -35,8 +35,7 @@ public class Service {
     @ColumnInfo(name = "image_url")
     private String imageUrl;
 
-
-    public Service(String name, String overview, double rating, String category, String location, String hours, String phoneNumber) {
+    public Service(String name, String overview, double rating, String category, String location, String hours, String phoneNumber, String imageUrl) {
         this.name = name;
         this.overview = overview;
         this.rating = rating;
@@ -44,6 +43,7 @@ public class Service {
         this.location = location;
         this.hours = hours;
         this.phoneNumber = phoneNumber;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {

@@ -23,6 +23,11 @@
     <string name="label_image">Gambar</string>
     <string name="btn_upload_image">Unggah Gambar</string>
     <string name="btn_save">Simpan</string>
+    <string-array name="phone_types">
+        <item>Mobile</item>
+        <item>Rumah</item>
+        <item>Kerja</item>
+    </string-array>
 
     <!--  Service Details  -->
     <string name="title_service_details">Detail Layanan Jasa</string>

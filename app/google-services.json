@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "155858529472-3mo23u7pch4egrvp13752n73ks52ehke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia",
+            "certificate_hash": "3c8e0012ffb5dafc26b62fc66e059d41b48187b5"
+          }
+        },
+        {
           "client_id": "155858529472-pfm0701ebvpap55nt395bap8u2vjo0i3.apps.googleusercontent.com",
           "client_type": 3
         }

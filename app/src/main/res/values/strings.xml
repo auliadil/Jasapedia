@@ -23,6 +23,12 @@
     <string name="label_image">Image</string>
     <string name="btn_upload_image">Upload Image</string>
     <string name="btn_save">Save</string>
+    <string-array name="phone_types">
+        <item>Mobile</item>
+        <item>Home</item>
+        <item>Work</item>
+    </string-array>
+
 
     <!--  Service Details  -->
     <string name="title_service_details">Service Details</string>

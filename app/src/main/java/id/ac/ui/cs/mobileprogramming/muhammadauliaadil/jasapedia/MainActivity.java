@@ -4,10 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,22 +11,16 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.AccountFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.BookingsFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.HomeFragment;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigationView;
-    private ServiceViewModel serviceViewModel;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,32 +54,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        Intent intent = null;
         Fragment fragment = null;
         switch (item.getItemId()){
             case R.id.home_menu:
                 fragment = new HomeFragment();
                 break;
             case R.id.bookings_menu:
-//                intent = new Intent(MainActivity.this, BookingsActivity.class);
                 fragment = new BookingsFragment();
                 break;
             case R.id.account_menu:
-//                intent = new Intent(MainActivity.this, AccountActivity.class);
                 fragment = new AccountFragment();
                 break;
         }
         return loadFragment(fragment);
-//        if(intent != null) {
-//            startActivity(intent);
-//            finish();
-//            return true;
-//        }
-//        else return false;
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }

@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddBookingActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddServiceActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
@@ -48,24 +50,32 @@ public class ServiceDetailsFragment extends Fragment {
     }
 
     private void setService(final Service service){
-        TextView nameText = getView().findViewById(R.id.details_name);
-        nameText.setText(service.getName());
-        TextView categoryText = getView().findViewById(R.id.details_category);
-        categoryText.setText(service.getCategory());
-        RatingBar rating = getView().findViewById(R.id.details_rating);
-        rating.setRating((float) service.getRating());
-        TextView ratingNumberText = getView().findViewById(R.id.details_rating_number);
-        ratingNumberText.setText(String.valueOf(service.getRating()));
-        TextView overviewText = getView().findViewById(R.id.details_overview);
-        overviewText.setText(service.getOverview());
-        TextView locationText = getView().findViewById(R.id.details_location);
-        locationText.setText(service.getLocation());
-        TextView hoursText = getView().findViewById(R.id.details_working_hours);
-        hoursText.setText(service.getHours());
-        TextView phoneNumberText = getView().findViewById(R.id.details_phone_number);
-        phoneNumberText.setText(service.getPhoneNumber());
+        TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText;
+        RatingBar rating;
+        ImageView image;
 
-        ImageView image = getView().findViewById(R.id.details_image);
+        nameText = getView().findViewById(R.id.details_name);
+        nameText.setText(service.getName());
+        categoryText = getView().findViewById(R.id.details_category);
+        categoryText.setText(service.getCategory());
+        rating = getView().findViewById(R.id.details_rating);
+        rating.setRating((float) service.getRating());
+        ratingNumberText = getView().findViewById(R.id.details_rating_number);
+        ratingNumberText.setText(String.valueOf(service.getRating()));
+        overviewText = getView().findViewById(R.id.details_overview);
+        overviewText.setText(service.getOverview());
+        locationText = getView().findViewById(R.id.details_location);
+        locationText.setText(service.getLocation());
+        hoursText = getView().findViewById(R.id.details_working_hours);
+        hoursText.setText(service.getHours());
+        phoneNumberText = getView().findViewById(R.id.details_phone_number);
+        phoneNumberText.setText(service.getPhoneNumber());
+        image = getView().findViewById(R.id.details_image);
+
+        Glide.with(this)
+                .asBitmap()
+                .load(service.getImageUrl())
+                .into(image);
 
         Log.d("IdDetails", String.valueOf(service.getId()));
 
@@ -81,10 +91,6 @@ public class ServiceDetailsFragment extends Fragment {
                 startActivity(intent);
             }
         });
-//        Glide.with(this)
-//                .asBitmap()
-//                .load(service.getImageUrl())
-//                .into(image);
     }
 
 //    @Override

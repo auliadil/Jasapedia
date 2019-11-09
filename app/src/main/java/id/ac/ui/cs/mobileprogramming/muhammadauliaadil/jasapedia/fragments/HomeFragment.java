@@ -98,8 +98,9 @@ public class HomeFragment extends Fragment {
             String location = data.getStringExtra(AddServiceActivity.EXTRA_LOCATION);
             String hours = data.getStringExtra(AddServiceActivity.EXTRA_HOURS);
             String phoneNumber = data.getStringExtra(AddServiceActivity.EXTRA_PHONE_NUMBER);
+            String imageUrl = data.getStringExtra(AddServiceActivity.EXTRA_IMAGE_URL);
 
-            Service service = new Service(name, overview, rating, category, location, hours, phoneNumber);
+            Service service = new Service(name, overview, rating, category, location, hours, phoneNumber, imageUrl);
             serviceViewModel.insert(service);
 
             Toast.makeText(getContext(), "Service saved and contact added to your device", Toast.LENGTH_LONG).show();

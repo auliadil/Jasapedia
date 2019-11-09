@@ -11,6 +11,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -26,6 +27,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.adapters.ServiceAdapter;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.broadcastreceivers.AlertReceiver;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.DatePickerFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.TimePickerFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;
@@ -118,11 +120,12 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(this, "Please insert full", Toast.LENGTH_LONG);
             return;
         }
+        String serviceName = txtName.getText().toString();
         String note = txtNote.getText().toString();
         String date = txtDate.getText().toString();
         String time = txtTime.getText().toString();
         Log.d("TimeMillis","time in millis: " + c.getTimeInMillis() + " and time in timezone: " + c.getTimeZone());
-        startAlarm(c);
+        startAlarm(serviceName, c);
         finish();
         Log.d("ActivityResult", "muncul");
         Booking booking = new Booking(serviceName, note, date, time);
@@ -147,12 +150,26 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         txtDate.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
     }
 
-    private void startAlarm(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+//    private void startAlarm(Calendar c) {
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//        Intent intent = new Intent(this, AlertReceiver.class);
+//        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+//        Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show();
+//    }
 
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    private void startAlarm(String serviceName, Calendar cal){
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(getApplicationContext(), AlertReceiver.class);
+        intent.putExtra("serviceName", serviceName);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Log.d("alarm", "startAlarm: starting.......");
+            Log.d("alarm", "startAlarm: millis........."+ cal.getTimeInMillis());
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis() + 5000,1000, pendingIntent);
+            Log.d("alarm", "startAlarm: zz...........");
+        }
     }
 
     public boolean validate() {

@@ -19,7 +19,6 @@ import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,7 +35,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Map;
 
-import fr.ganfra.materialspinner.MaterialSpinner;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
 
@@ -49,15 +47,12 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     private ProgressBar progressBar;
     private Button btnUploadImage, btnSave;
     private ImageView holderImage;
-    private int SELECT_IMAGE = 1;
     final int REQUEST_CODE_GALLERY = 999;
     private Uri selectedUri;
     private String cloudinaryUrl;
     private Intent data;
 
     private ServiceViewModel serviceViewModel;
-
-    private int counter = 0;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -91,10 +86,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         btnSave = findViewById(R.id.save_service);
 
         // Initialize phone type dropdown spinner.
-        phoneTypeSpinner = (MaterialSpinner)findViewById(R.id.spinner_type);
-        String phoneTypeArr[] = {"Mobile", "Home", "Work"};
-        ArrayAdapter<String> phoneTypeSpinnerAdaptor = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, phoneTypeArr);
-        phoneTypeSpinner.setAdapter(phoneTypeSpinnerAdaptor);
+        phoneTypeSpinner = findViewById(R.id.spinner_type);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 
@@ -183,7 +175,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
         setResult(RESULT_OK, data);
 
-
         MediaManager.get().upload(selectedUri)
                 .unsigned("ph8w3u5h")
                 .option("resource_type", "image")
@@ -204,7 +195,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                         Toast.makeText(AddServiceActivity.this, "Uploaded Succesfully", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                         cloudinaryUrl = resultData.get("secure_url").toString();
-                        Log.d("CLOUDINARY", "onSuccess: succeed");
                         Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl);
 
                         data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl);
@@ -308,40 +298,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         getContentResolver().insert(addContactsUri, contentValues);
 
     }
-
-//    public void saveContact() {
-//        //    Contact
-//        ArrayList ops = new ArrayList();
-//        int rawContactInsertIndex = ops.size();
-//
-//        ops.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI)
-//                .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
-//                .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null)
-//                .build());
-//        ops.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI)
-//                .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID,rawContactInsertIndex)
-//                .withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-//                .withValue(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME, etName.getText().toString()) // Name of the person
-//                .withValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME, "One of services in Jasapedia") // Name of the person
-//                .withValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, etName.getText().toString()) // Name of the person
-//                .build());
-//
-//        ContentProviderResult[] res = new ContentProviderResult[0];
-//        try {
-//            res = getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
-//        } catch (OperationApplicationException e) {
-//            e.printStackTrace();
-//        } catch (RemoteException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (res!=null && res[0]!=null) {
-//            newContactUri = res[0].uri;
-//            //02-20 22:21:09 URI added contact:content://com.android.contacts/raw_contacts/612
-//            Log.d("URIStatus: ", "URI added contact:"+ newContactUri);
-//        }
-//        else Log.e("URIStatus: ", "Contact not added.");
-//    }
 
     public boolean validate() {
         boolean valid = true;
