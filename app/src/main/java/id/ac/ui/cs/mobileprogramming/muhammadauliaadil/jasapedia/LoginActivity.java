@@ -70,10 +70,6 @@ public class LoginActivity extends AppCompatActivity {
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
-        // TODO: Implement your own authentication logic here.
-
-
-
         new android.os.Handler().postDelayed(
             new Runnable() {
                 public void run() {
@@ -91,9 +87,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
-
-                // TODO: Implement successful signup logic here
-                // By default we just finish the Activity and log them in automatically
+                Toast.makeText(this, "Sign Up Success", Toast.LENGTH_SHORT).show();
                 this.finish();
             }
         }

@@ -29,6 +29,7 @@
         <item>Work</item>
     </string-array>
     <string name="image_info">No photos uploaded yet</string>
+    <string name="category_title">Select Category</string>
 
 
     <!--  Service Details  -->

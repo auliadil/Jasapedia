@@ -28,13 +28,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Intent intent = new Intent(this, LoginActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
 
         loadFragment(new HomeFragment());
         navigationView = findViewById(R.id.bn_main);
         navigationView.setOnNavigationItemSelectedListener(this);
+    }
 
+    @Override
+    public void onBackPressed() {
+        // Disable going back to the LoginActivity or SignUpActivity
+        moveTaskToBack(true);
     }
 
     @Nullable

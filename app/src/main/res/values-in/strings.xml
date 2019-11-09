@@ -29,6 +29,7 @@
         <item>Kerja</item>
     </string-array>
     <string name="image_info">Belum ada foto yang diunggah</string>
+    <string name="category_title">Pilih Kategori</string>
 
     <!--  Service Details  -->
     <string name="title_service_details">Detail Layanan Jasa</string>

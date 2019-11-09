@@ -19,6 +19,7 @@ import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,9 +32,11 @@ import android.widget.Toast;
 import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
+import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -46,10 +49,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AddServiceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etName, etOverview, etCategory, etLocation, etHours, etPhoneNumber;
+    private EditText etName, etOverview, etLocation, etHours, etPhoneNumber;
     private RatingBar rbRating;
     private SharedPreferences sharedpreference;
-    private Spinner phoneTypeSpinner;
+    private Spinner phoneNumberTypeSpinner;
+    private SearchableSpinner categorySpinner;
     private ProgressBar progressBar;
     private Button btnUploadImage, btnSave;
     private ImageView holderImage;
@@ -83,14 +87,24 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         etName = findViewById(R.id.et_service_name);
         etOverview = findViewById(R.id.et_service_overview);
         rbRating = findViewById(R.id.rb_service_rating);
-        etCategory = findViewById(R.id.et_service_category);
+//        etCategory = findViewById(R.id.et_service_category);
         etLocation = findViewById(R.id.et_service_location);
         etHours = findViewById(R.id.et_service_hours);
         etPhoneNumber = findViewById(R.id.et_service_phone_number);
+
+        ActivityCompat.requestPermissions(
+                AddServiceActivity.this,
+                new String[]{Manifest.permission.WRITE_CONTACTS},
+                REQUEST_CODE_GALLERY
+        );
         btnSave = findViewById(R.id.save_service);
 
-        // Initialize phone type dropdown spinner.
-        phoneTypeSpinner = findViewById(R.id.spinner_type);
+        categorySpinner = findViewById(R.id.spinner_category);
+        String title = getResources().getString(R.string.category_title);
+        categorySpinner.setTitle(title);
+        categorySpinner.setPositiveButton("OK");
+
+        phoneNumberTypeSpinner = findViewById(R.id.spinner_type);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 
@@ -107,36 +121,39 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         // Initialize Retrofit
         textViewResult = findViewById(R.id.text_view_result);
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.yelp.com/v3/categories/")
+                .baseUrl("https://api.yelp.com/v3/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         YelpApi yelpAPI = retrofit.create(YelpApi.class);
 
-        Call<List<Category>> call = yelpAPI.getCategories("Bearer FRnunewLKg1nM6GG-Hay6OxeyrDvonUl8Suowa42sQi6E8A53dHMz6zXXXlDhXfZ60HeNcx2V8-4oG_6YaXJctK8rcmjukMAXk86ahbPI8BgCK9iq2bdPQW0VabGXXYx");
+        Call<ListCategory> call = yelpAPI.getCategories();
 
-        call.enqueue(new Callback<List<Category>>() {
+        call.enqueue(new Callback<ListCategory>() {
             @Override
-            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+            public void onResponse(Call<ListCategory> call, Response<ListCategory> response) {
 
                 if (!response.isSuccessful()) {
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
 
-                List<Category> categories = response.body();
+                ListCategory listCategory = response.body();
 
-                for (Category category : categories) {
-                    String content = "";
-                    content += "ID: " + category.getId() + "\n";
-                    content += "Title: " + category.getTitle() + "\n\n";
+                List<String> categories = new ArrayList<String>();
 
-                    textViewResult.append(content);
+                for (Category category : listCategory.getCategories()) {
+                    categories.add(category.getTitle());
                 }
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, categories);
+
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                categorySpinner.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<List<Category>> call, Throwable t) {
+            public void onFailure(Call<ListCategory> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
         });
@@ -151,7 +168,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     REQUEST_CODE_GALLERY
             );
-
         }
         if (v == btnSave) {
             saveService();
@@ -200,7 +216,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String name = etName.getText().toString();
         String overview = etOverview.getText().toString();
         double rating = (double) rbRating.getRating();
-        String category = etCategory.getText().toString();
+        String category = (String) categorySpinner.getSelectedItem();
         String location = etLocation.getText().toString();
         String hours = etHours.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
@@ -262,7 +278,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String displayName = etName.getText().toString();
         insertContactDisplayName(addContactsUri, rowContactId, displayName);
         String phoneNumber = etPhoneNumber.getText().toString();
-        String phoneTypeStr = (String)phoneTypeSpinner.getSelectedItem();
+        String phoneTypeStr = (String) phoneNumberTypeSpinner.getSelectedItem();
         insertContactPhoneNumber(addContactsUri, rowContactId, phoneNumber, phoneTypeStr);
 
     }
@@ -307,7 +323,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
         String name = etName.getText().toString();
         String overview = etOverview.getText().toString();
-        String category = etCategory.getText().toString();
         String location = etLocation.getText().toString();
         String hours = etHours.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
@@ -319,11 +334,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
         if (overview.isEmpty()) {
             etOverview.setError("enter a valid overview");
-            valid = false;
-        }
-
-        if (category.isEmpty()) {
-            etCategory.setError("enter a valid category");
             valid = false;
         }
 

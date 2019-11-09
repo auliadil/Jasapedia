@@ -1,9 +1,12 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia;
 
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Category {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @SerializedName("alias")
