@@ -20,16 +20,16 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBEdoH9Qo8dqw0zbCAPc8Hj18LViToUEFU"/>
-        <activity android:name=".AddBookingActivity"></activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".activities.AddBookingActivity"></activity>
+        <activity android:name=".activities.SignupActivity" />
+        <activity android:name=".activities.LoginActivity" />
         <activity
-            android:name=".AddServiceActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".activities.AddServiceActivity"
+            android:parentActivityName=".activities.MainActivity" />
+        <activity android:name=".activities.MainActivity">
         </activity>
         <activity
-            android:name=".SplashScreenActivity">
+            android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

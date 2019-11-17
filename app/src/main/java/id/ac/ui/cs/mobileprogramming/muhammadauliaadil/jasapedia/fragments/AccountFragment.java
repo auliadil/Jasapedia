@@ -25,16 +25,16 @@ public class AccountFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        name = getView().findViewById(R.id.user_name);
-        address = getView().findViewById(R.id.user_address);
-        email = getView().findViewById(R.id.user_email);
-        phoneNumber = getView().findViewById(R.id.user_phone_number);
-        return inflater.inflate(R.layout.fragment_account, container, false);
-    }
+//    @Nullable
+//    @Override
+//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+//                             @Nullable Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//
+//        name = getView().findViewById(R.id.user_name);
+//        address = getView().findViewById(R.id.user_address);
+//        email = getView().findViewById(R.id.user_email);
+//        phoneNumber = getView().findViewById(R.id.user_phone_number);
+//        return inflater.inflate(R.layout.fragment_account, container, false);
+//    }
 }

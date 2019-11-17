@@ -16,11 +16,15 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
 public class NotificationHelper extends ContextWrapper {
     public static final String channelID = "Jasapedia";
     public static final String channelName = "Jasapedia Channel";
+    private String title;
+    private String text;
 
     private NotificationManager mManager;
 
-    public NotificationHelper(Context base) {
+    public NotificationHelper(Context base, String title, String text) {
         super(base);
+        this.title = title;
+        this.text = text;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createChannel();
         }
@@ -44,8 +48,8 @@ public class NotificationHelper extends ContextWrapper {
     public NotificationCompat.Builder getChannelNotification() {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), channelID)
-                .setContentTitle("Alarm!")
-                .setContentText("Your AlarmManager is working.")
+                .setContentTitle(title)
+                .setContentText(text)
                 .setSmallIcon(R.drawable.ic_logo_jasapedia);
 
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

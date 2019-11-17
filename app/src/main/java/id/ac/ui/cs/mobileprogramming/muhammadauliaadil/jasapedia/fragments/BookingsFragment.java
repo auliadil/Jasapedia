@@ -1,8 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,11 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddBookingActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.adapters.BookingAdapter;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;

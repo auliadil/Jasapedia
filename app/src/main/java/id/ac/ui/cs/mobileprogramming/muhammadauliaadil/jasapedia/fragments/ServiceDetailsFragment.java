@@ -10,21 +10,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddBookingActivity;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.AddServiceActivity;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.AddBookingActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Booking;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
-
-import static android.app.Activity.RESULT_OK;
 
 public class ServiceDetailsFragment extends Fragment {
     private Service service;
@@ -36,6 +31,12 @@ public class ServiceDetailsFragment extends Fragment {
 
     public ServiceDetailsFragment(Service service) {
         this.service = service;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override
