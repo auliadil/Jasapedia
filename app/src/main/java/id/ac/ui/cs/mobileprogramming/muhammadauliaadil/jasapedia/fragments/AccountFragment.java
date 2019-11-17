@@ -37,4 +37,5 @@ public class AccountFragment extends Fragment {
 //        phoneNumber = getView().findViewById(R.id.user_phone_number);
 //        return inflater.inflate(R.layout.fragment_account, container, false);
 //    }
+
 }
