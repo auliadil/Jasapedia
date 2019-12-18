@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia">
-
-    <!-- Need below permissions.-->
+    <!-- Need below permissions. -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".JasapediaApp"
@@ -17,19 +18,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.MapActivity"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBEdoH9Qo8dqw0zbCAPc8Hj18LViToUEFU"/>
-        <activity android:name=".activities.AddBookingActivity"></activity>
+            android:value="AIzaSyBEdoH9Qo8dqw0zbCAPc8Hj18LViToUEFU" />
+
+        <activity android:name=".activities.AddBookingActivity" />
         <activity android:name=".activities.SignupActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity
             android:name=".activities.AddServiceActivity"
             android:parentActivityName=".activities.MainActivity" />
-        <activity android:name=".activities.MainActivity">
-        </activity>
-        <activity
-            android:name=".activities.SplashScreenActivity">
+        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,11 +39,17 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".broadcastreceivers.AlertReceiver"/>
+        <receiver
+            android:name=".broadcastreceivers.AlertReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="CLOUDINARY_URL"
-            android:value="cloudinary://974157215917551:9fjazXajLlVltPWg4yf3owBMxMQ@adiltech20"/>
-
+            android:value="cloudinary://974157215917551:9fjazXajLlVltPWg4yf3owBMxMQ@adiltech20" />
     </application>
+
 </manifest>

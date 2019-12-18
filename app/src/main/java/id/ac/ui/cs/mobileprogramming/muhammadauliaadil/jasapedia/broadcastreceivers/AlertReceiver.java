@@ -21,8 +21,10 @@ public class AlertReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationHelper notificationHelper = new NotificationHelper(context, title, text);
-        NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
-        notificationHelper.getManager().notify(1, nb.build());
+        if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
+            NotificationHelper notificationHelper = new NotificationHelper(context, title, text);
+            NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
+            notificationHelper.getManager().notify(1, nb.build());
+        }
     }
 }
