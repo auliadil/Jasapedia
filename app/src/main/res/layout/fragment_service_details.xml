@@ -101,24 +101,50 @@
                     android:text="@string/details_information"
                     style="@style/Body1" />
 
-                <TextView
-                    android:id="@+id/details_location"
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/ic_location_blue"
-                    android:drawablePadding="8dp"
-                    android:text="Location Text"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    style="@style/Body2"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_location_blue"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/details_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location Text"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            style="@style/Body2"/>
+
+                        <Button
+                            android:id="@+id/open_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Open Map"
+                            style="@style/Body2"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <TextView
                     android:id="@+id/details_working_hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawableLeft="@drawable/ic_watch_blue"
+                    android:drawableLeft="@drawable/ic_hours"
                     android:drawablePadding="8dp"
                     android:text="Working Hours Text"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -133,6 +159,18 @@
                     android:drawableLeft="@drawable/ic_phone_blue"
                     android:drawablePadding="8dp"
                     android:text="Phone Number Text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Body2"/>
+
+                <TextView
+                    android:id="@+id/details_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_cost"
+                    android:drawablePadding="8dp"
+                    android:text="Cost Text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     style="@style/Body2"/>

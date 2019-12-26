@@ -26,8 +26,8 @@ public class Service {
     @ColumnInfo(name = "location")
     private String location;
 
-    @ColumnInfo(name = "hours")
-    private String hours;
+    @ColumnInfo(name = "service_hours")
+    private String serviceHours;
 
     @ColumnInfo(name = "phone_number")
     private String phoneNumber;
@@ -35,15 +35,23 @@ public class Service {
     @ColumnInfo(name = "image_url")
     private String imageUrl;
 
-    public Service(String name, String overview, double rating, String category, String location, String hours, String phoneNumber, String imageUrl) {
+    @ColumnInfo(name = "cost")
+    private int cost;
+
+    @ColumnInfo(name = "unit_cost")
+    private String unitCost;
+
+    public Service(String name, String overview, double rating, String category, String location, String serviceHours, String phoneNumber, String imageUrl, int cost, String unitCost) {
         this.name = name;
         this.overview = overview;
         this.rating = rating;
         this.category = category;
         this.location = location;
-        this.hours = hours;
+        this.serviceHours = serviceHours;
         this.phoneNumber = phoneNumber;
         this.imageUrl = imageUrl;
+        this.cost = cost;
+        this.unitCost = unitCost;
     }
 
     public int getId() {
@@ -94,12 +102,12 @@ public class Service {
         this.location = location;
     }
 
-    public String getHours() {
-        return hours;
+    public String getServiceHours() {
+        return serviceHours;
     }
 
-    public void setHours(String hours) {
-        this.hours = hours;
+    public void setServiceHours(String serviceHours) {
+        this.serviceHours = serviceHours;
     }
 
     public String getPhoneNumber() {
@@ -116,5 +124,21 @@ public class Service {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public String getUnitCost() {
+        return unitCost;
+    }
+
+    public void setUnitCost(String unitCost) {
+        this.unitCost = unitCost;
     }
 }

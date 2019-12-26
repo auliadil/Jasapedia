@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, fragment, "homefragment")
+                .replace(R.id.fl_container, fragment, "fragment")
                 .commit();
             return true;
         }

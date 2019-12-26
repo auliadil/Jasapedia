@@ -16,8 +16,11 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.AddBookingActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
+import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.MapActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
 
@@ -28,6 +31,7 @@ public class ServiceDetailsFragment extends Fragment {
     private TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText;
     private RatingBar rating;
     private ImageView image;
+    @BindView(R.id.open_map) Button btnOpenMap;
 
     public ServiceDetailsFragment(Service service) {
         this.service = service;
@@ -37,6 +41,7 @@ public class ServiceDetailsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        ButterKnife.bind(getActivity());
     }
 
     @Override
@@ -51,6 +56,14 @@ public class ServiceDetailsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setService(service);
+        btnOpenMap.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setService(final Service service){
@@ -68,7 +81,7 @@ public class ServiceDetailsFragment extends Fragment {
         locationText = getView().findViewById(R.id.details_location);
         locationText.setText(service.getLocation());
         hoursText = getView().findViewById(R.id.details_working_hours);
-        hoursText.setText(service.getHours());
+        hoursText.setText(service.getServiceHours());
         phoneNumberText = getView().findViewById(R.id.details_phone_number);
         phoneNumberText.setText(service.getPhoneNumber());
         image = getView().findViewById(R.id.details_image);
@@ -97,6 +110,8 @@ public class ServiceDetailsFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+//        Text btnOpenMap = getView().findViewById(R.id.open_map);
     }
 
 //    @Override

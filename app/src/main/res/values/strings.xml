@@ -63,4 +63,7 @@
     <!--  Account  -->
     <string name="btn_logout">Sign Out</string>
 
+    <!--  Token MAPBOX  -->
+    <string name="mapbox_access_token">pk.eyJ1IjoiYXVsaWFkaWwiLCJhIjoiY2s0a3NtNjZlMGgwNDNuczBrdjRkYmh1ZyJ9.5ViWuR4QFHHwzaRg-9frDQ</string>
+
 </resources>

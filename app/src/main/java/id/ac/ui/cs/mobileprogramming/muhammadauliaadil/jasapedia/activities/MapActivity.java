@@ -11,6 +11,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
+import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
 
 public class MapActivity extends AppCompatActivity {
@@ -21,7 +22,8 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        Mapbox.getInstance(this, "YOUR_MAPBOX_ACCESS_TOKEN");
+        ButterKnife.bind(this);
+        Mapbox.getInstance(this, "pk.eyJ1IjoiYXVsaWFkaWwiLCJhIjoiY2s0a3NtNjZlMGgwNDNuczBrdjRkYmh1ZyJ9.5ViWuR4QFHHwzaRg-9frDQ");
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
