@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,6 +97,7 @@ public class HomeFragment extends Fragment {
             String hours = data.getStringExtra(EXTRA_HOURS);
             String phoneNumber = data.getStringExtra(EXTRA_PHONE_NUMBER);
             String imageUrl = data.getStringExtra(EXTRA_IMAGE_URL);
+            Log.d("CLOUDINARY GET EXTRA", "onSuccess: "+ imageUrl);
             int cost = data.getIntExtra(EXTRA_COST, 0);
             String unitCost = data.getStringExtra(EXTRA_UNIT_COST);
 

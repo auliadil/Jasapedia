@@ -94,7 +94,7 @@ public class ServiceDetailsFragment extends Fragment {
 
         String text = service.getImageUrl();
 
-        Log.d("cloudinaryUrl", text);
+        if(text != null)  Log.d("cloudinaryUrl", text);
 
         Glide.with(this)
                 .asBitmap()
@@ -112,9 +112,11 @@ public class ServiceDetailsFragment extends Fragment {
                 String serviceId = String.valueOf(service.getId());
                 String serviceName = service.getName();
                 int serviceCost = service.getCost();
+                String serviceUnitCost = service.getUnitCost();
                 intent.putExtra("SERVICE_ID", serviceId);
                 intent.putExtra("SERVICE_NAME", serviceName);
                 intent.putExtra("SERVICE_COST", serviceCost);
+                intent.putExtra("SERVICE_UNIT_COST", serviceUnitCost);
                 startActivity(intent);
             }
         });

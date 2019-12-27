@@ -94,6 +94,12 @@
                     android:hint="@string/label_amount" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/label_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
             <Button
                 android:id="@+id/save_booking"
                 android:layout_width="wrap_content"

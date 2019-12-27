@@ -45,7 +45,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
         holder.tvBookingNote.setText(currentBooking.getNote());
         holder.tvBookingDate.setText(currentBooking.getDate());
         holder.tvBookingTime.setText(currentBooking.getTime());
-        holder.tvBookingFee.setText(currentBooking.getBookingFee());
+        holder.tvBookingFee.setText("Rp " + currentBooking.getBookingFee());
     }
 
     @Override

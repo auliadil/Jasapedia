@@ -30,13 +30,13 @@
         <item>Kerja</item>
     </string-array>
     <string-array name="unit_cost_types">
-        <item>Barang</item>
-        <item>Jam</item>
-        <item>Kendaraan</item>
-        <item>Kg</item>
-        <item>Km</item>
-        <item>Menit</item>
-        <item>Orang</item>
+        <item>Per Barang</item>
+        <item>Per Jam</item>
+        <item>Per Kendaraan</item>
+        <item>Per Kg</item>
+        <item>Per Km</item>
+        <item>Per Menit</item>
+        <item>Per Orang</item>
     </string-array>
     <string name="image_info">Belum ada foto yang diunggah</string>
     <string name="category_title">Pilih Kategori</string>

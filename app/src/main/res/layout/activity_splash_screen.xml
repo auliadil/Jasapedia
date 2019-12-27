@@ -7,6 +7,13 @@
     tools:context=".activities.SplashScreenActivity"
     android:background="#0881D0">
 
+    <android.opengl.GLSurfaceView
+        android:id="@+id/openGL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.opengl.GLSurfaceView>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"

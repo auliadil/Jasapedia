@@ -39,7 +39,7 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.Serv
 public class AddBookingActivity extends AppCompatActivity implements View.OnClickListener, TimePickerDialog.OnTimeSetListener,
         DatePickerDialog.OnDateSetListener {
 
-    private TextView txtName;
+    private TextView txtName, txtCost;
     private SharedPreferences sharedpreference;
     private ServiceViewModel serviceViewModel;
     private List<Service> serviceList;
@@ -48,7 +48,7 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     private Button btnDatePicker, btnTimePicker, btnSave;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private Calendar c;
-    private String serviceName;
+    private String serviceName, serviceUnitCost;
     private int serviceCost;
     private BookingViewModel bookingViewModel;
 
@@ -63,6 +63,7 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_add_booking);
         init();
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+        setTitle("Add Booking");
     }
 
     public void init() {
@@ -83,6 +84,7 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         txtDate = findViewById(R.id.et_booking_date);
         txtTime = findViewById(R.id.et_booking_time);
         txtAmount = findViewById(R.id.et_booking_amount);
+        txtCost = findViewById(R.id.label_cost);
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
@@ -92,7 +94,9 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
 
         serviceName = intent.getStringExtra("SERVICE_NAME");
         serviceCost = intent.getIntExtra("SERVICE_COST", 0);
+        serviceUnitCost = intent.getStringExtra("SERVICE_UNIT_COST");
         txtName.setText(serviceName);
+        txtCost.setText("Rp " + serviceCost + " " + serviceUnitCost);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
     }

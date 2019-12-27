@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -40,6 +42,8 @@ import java.util.Currency;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.ListCategory;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.YelpApi;
@@ -56,7 +60,9 @@ import static me.abhinay.input.CurrencySymbols.INDONESIA;
 
 public class AddServiceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etName, etOverview, etLocation, etHours, etPhoneNumber, etUnitCost;
+    private EditText etName, etOverview, etLocation, etHours, etUnitCost;
+//    private @BindView(etPhoneNumber)
+    @BindView(R.id.et_service_phone_number) EditText etPhoneNumber;
     private CurrencyEditText etCost;
     private RatingBar rbRating;
     private SharedPreferences sharedpreference;
@@ -68,6 +74,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     private Uri selectedUri;
     private Intent data;
     private TextView textViewResult;
+    private String[] cloudinaryUrl;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -84,9 +91,8 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
-
+        ButterKnife.bind(this);
         init();
-
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
         setTitle("Add Service");
     }
@@ -98,7 +104,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 //        etCategory = findViewById(R.id.et_service_category);
         etLocation = findViewById(R.id.et_service_location);
         etHours = findViewById(R.id.et_service_hours);
-        etPhoneNumber = findViewById(R.id.et_service_phone_number);
+//        etPhoneNumber = findViewById(R.id.et_service_phone_number);
         etCost = findViewById(R.id.et_cost);
 
         etCost.setCurrency(INDONESIA);
@@ -107,12 +113,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         etCost.setDecimals(false);
         //Make sure that Decimals is set as false if a custom Separator is used
         etCost.setSeparator(".");
-
-        ActivityCompat.requestPermissions(
-                AddServiceActivity.this,
-                new String[]{Manifest.permission.WRITE_CONTACTS},
-                REQUEST_CODE_CONTACT
-        );
         btnSave = findViewById(R.id.save_service);
 
         categorySpinner = findViewById(R.id.spinner_category);
@@ -186,6 +186,14 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         if (v == btnSave) {
             saveService();
         }
+
+        if (v == etPhoneNumber) {
+            ActivityCompat.requestPermissions(
+                    AddServiceActivity.this,
+                    new String[]{Manifest.permission.WRITE_CONTACTS},
+                    REQUEST_CODE_CONTACT
+            );
+        }
     }
 
     @Override
@@ -195,13 +203,65 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_CODE_GALLERY);
+                Toast.makeText(getApplicationContext(), "Permission has been granted!", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(getApplicationContext(), "You don't have permission to access file location!", Toast.LENGTH_SHORT).show();
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                break;
+                        }
+                    }
+                };
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("You need to allow access to permission");
+                builder.setIcon(R.drawable.ic_error_blue);
+                builder.setMessage("By giving permission, you can select and upload image on your device to be saved as the image of the service you are currently creating")
+                        .setPositiveButton("OK", dialogClickListener).show();
+            }
+            return;
+        } else if (requestCode == REQUEST_CODE_CONTACT) {
+            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(getApplicationContext(), "Permission has been granted!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                break;
+                        }
+                    }
+                };
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("You need to allow access to permission");
+                builder.setIcon(R.drawable.ic_error_blue);
+                builder.setMessage("By giving permission, you can add this service phone number to your contacts")
+                        .setPositiveButton("OK", dialogClickListener).show();
             }
             return;
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    public void showAlert() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("You need to allow access to permission");
+        builder.setIcon(R.drawable.ic_error_blue);
+        builder.setMessage("By giving permission, you can select and upload image on your device to be saved as the image of the service you are currently creating")
+                .setPositiveButton("OK", dialogClickListener).show();
     }
 
     @Override
@@ -236,7 +296,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String phoneNumber = etPhoneNumber.getText().toString();
         int cost = etCost.getCleanIntValue();
         String unitCost = (String) unitCostSpinner.getSelectedItem();
-        final String[] cloudinaryUrl = new String[1];
+        cloudinaryUrl = new String[1];
 
         data = new Intent();
         data.putExtra(EXTRA_NAME, name);
@@ -250,41 +310,42 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         data.putExtra(EXTRA_UNIT_COST, unitCost);
 
         MediaManager.get().upload(selectedUri)
-                .unsigned("ph8w3u5h")
-                .option("resource_type", "image")
-                .callback(new UploadCallback() {
+            .unsigned("ph8w3u5h")
+            .option("resource_type", "image")
+            .callback(new UploadCallback() {
 
-                    @Override
-                    public void onStart(String requestId) {
+                @Override
+                public void onStart(String requestId) {
 
-                    }
+                }
 
-                    @Override
-                    public void onProgress(String requestId, long bytes, long totalBytes) {
+                @Override
+                public void onProgress(String requestId, long bytes, long totalBytes) {
 
-                    }
+                }
 
-                    @Override
-                    public void onSuccess(String requestId, Map resultData) {
-                        cloudinaryUrl[0] = resultData.get("secure_url").toString();
-                        Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl[0]);
-                    }
+                @Override
+                public void onSuccess(String requestId, Map resultData) {
+                    cloudinaryUrl[0] = resultData.get("secure_url").toString();
+                    Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl[0]);
+                    data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
+                    Log.d("CLOUDINARY EXTRA", "onSuccess: "+ cloudinaryUrl[0]);
+                    setResult(RESULT_OK, data);
+                }
 
-                    @Override
-                    public void onError(String requestId, ErrorInfo error) {
-                        Toast.makeText(AddServiceActivity.this,"Upload Error", Toast.LENGTH_SHORT).show();
-                        Log.v("ERROR!!", error.getDescription());
+                @Override
+                public void onError(String requestId, ErrorInfo error) {
+                    Toast.makeText(AddServiceActivity.this,"Upload Error", Toast.LENGTH_SHORT).show();
+                    Log.v("ERROR!!", error.getDescription());
 
-                    }
+                }
 
-                    @Override
-                    public void onReschedule(String requestId, ErrorInfo error) {
+                @Override
+                public void onReschedule(String requestId, ErrorInfo error) {
 
-                    }
-                }).dispatch();
+                }
+            }).dispatch();
 
-        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
-        setResult(RESULT_OK, data);
         saveContact();
         finish();
     }

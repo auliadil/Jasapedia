@@ -30,13 +30,13 @@
         <item>Work</item>
     </string-array>
     <string-array name="unit_cost_types">
-        <item>Hour</item>
-        <item>Item</item>
-        <item>Kg</item>
-        <item>Km</item>
-        <item>Minute</item>
-        <item>Person</item>
-        <item>Vehicle</item>
+        <item>Per Hour</item>
+        <item>Per Item</item>
+        <item>Per Kg</item>
+        <item>Per Km</item>
+        <item>Per Minute</item>
+        <item>Per Person</item>
+        <item>Per Vehicle</item>
     </string-array>
     <string name="image_info">No photos uploaded yet</string>
     <string name="category_title">Select Category</string>
