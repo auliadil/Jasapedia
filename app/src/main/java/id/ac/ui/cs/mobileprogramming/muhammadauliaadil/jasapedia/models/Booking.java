@@ -23,11 +23,15 @@ public class Booking {
     @ColumnInfo(name = "time")
     private String time;
 
-    public Booking(String serviceName, String note, String date, String time) {
+    @ColumnInfo(name = "booking_fee")
+    private int bookingFee;
+
+    public Booking(String serviceName, String note, String date, String time, int bookingFee) {
         this.serviceName = serviceName;
         this.note = note;
         this.date = date;
         this.time = time;
+        this.bookingFee = bookingFee;
     }
 
     public int getId() {
@@ -42,8 +46,8 @@ public class Booking {
         return serviceName;
     }
 
-    public void setServiceId(String serviceId) {
-        this.serviceName = serviceId;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public String getNote() {
@@ -68,5 +72,13 @@ public class Booking {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public int getBookingFee() {
+        return bookingFee;
+    }
+
+    public void setBookingFee(int bookingFee) {
+        this.bookingFee = bookingFee;
     }
 }

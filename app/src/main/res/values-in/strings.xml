@@ -21,6 +21,7 @@
     <string name="label_hours">Jam Kerja</string>
     <string name="label_phone_number">Nomor Telepon</string>
     <string name="label_image">Gambar</string>
+    <string name="label_cost">Biaya (Rp)</string>
     <string name="btn_upload_image">Unggah Gambar</string>
     <string name="btn_save">Simpan</string>
     <string-array name="phone_types">
@@ -28,8 +29,19 @@
         <item>Rumah</item>
         <item>Kerja</item>
     </string-array>
+    <string-array name="unit_cost_types">
+        <item>Barang</item>
+        <item>Jam</item>
+        <item>Kendaraan</item>
+        <item>Kg</item>
+        <item>Km</item>
+        <item>Menit</item>
+        <item>Orang</item>
+    </string-array>
     <string name="image_info">Belum ada foto yang diunggah</string>
     <string name="category_title">Pilih Kategori</string>
+    <string name="phone_title">Pilih Tipe Kontak</string>
+    <string name="unit_cost_title">Pilih Satuan Biaya</string>
 
     <!--  Service Details  -->
     <string name="title_service_details">Detail Layanan Jasa</string>
@@ -58,6 +70,7 @@
     <string name="label_note">Catatan</string>
     <string name="label_date">Tanggal</string>
     <string name="label_time">Waktu</string>
+    <string name="label_amount">Jumlah</string>
 
     <!--  Account  -->
     <string name="btn_logout">Keluar</string>

@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.AddBookingActivity;
@@ -28,10 +30,10 @@ public class ServiceDetailsFragment extends Fragment {
     private Service service;
     private BookingViewModel bookingViewModel;
     public static final int ADD_BOOKING_REQUEST = 1;
-    private TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText;
+    private TextView nameText, categoryText, ratingNumberText, overviewText, locationText, hoursText, phoneNumberText, costText, unitCostText;
     private RatingBar rating;
     private ImageView image;
-    @BindView(R.id.open_map) Button btnOpenMap;
+    private Button btnOpenMap;
 
     public ServiceDetailsFragment(Service service) {
         this.service = service;
@@ -41,7 +43,6 @@ public class ServiceDetailsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        ButterKnife.bind(getActivity());
     }
 
     @Override
@@ -56,14 +57,6 @@ public class ServiceDetailsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setService(service);
-        btnOpenMap.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MapActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void setService(final Service service){
@@ -84,11 +77,24 @@ public class ServiceDetailsFragment extends Fragment {
         hoursText.setText(service.getServiceHours());
         phoneNumberText = getView().findViewById(R.id.details_phone_number);
         phoneNumberText.setText(service.getPhoneNumber());
+        costText = getView().findViewById(R.id.details_cost);
+        costText.setText("Rp " + service.getCost());
+        unitCostText = getView().findViewById(R.id.details_unit_cost);
+        unitCostText.setText("Per " + service.getUnitCost());
         image = getView().findViewById(R.id.details_image);
+//        btnOpenMap = getView().findViewById(R.id.open_map);
+//        btnOpenMap.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//            Intent intent = new Intent(getContext(), MapActivity.class);
+//            startActivity(intent);
+//            }
+//        });
 
         String text = service.getImageUrl();
 
-        if(text != null)  Log.d("cloudinaryUrl", text);
+        Log.d("cloudinaryUrl", text);
 
         Glide.with(this)
                 .asBitmap()
@@ -105,8 +111,10 @@ public class ServiceDetailsFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddBookingActivity.class);
                 String serviceId = String.valueOf(service.getId());
                 String serviceName = service.getName();
+                int serviceCost = service.getCost();
                 intent.putExtra("SERVICE_ID", serviceId);
                 intent.putExtra("SERVICE_NAME", serviceName);
+                intent.putExtra("SERVICE_COST", serviceCost);
                 startActivity(intent);
             }
         });

@@ -14,6 +14,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,6 +51,11 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         holder.tvServiceName.setText(currentService.getName());
         holder.tvServiceOverview.setText(currentService.getOverview());
         holder.serviceRating.setRating((float) currentService.getRating());
+        Glide.with(context)
+                .asBitmap()
+                .load(currentService.getImageUrl())
+                .fitCenter()
+                .into(holder.ivServiceImage);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

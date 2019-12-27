@@ -21,6 +21,7 @@
     <string name="label_hours">Working Hours</string>
     <string name="label_phone_number">Telephone Number</string>
     <string name="label_image">Image</string>
+    <string name="label_cost">Cost (Rp)</string>
     <string name="btn_upload_image">Upload Image</string>
     <string name="btn_save">Save</string>
     <string-array name="phone_types">
@@ -28,8 +29,19 @@
         <item>Home</item>
         <item>Work</item>
     </string-array>
+    <string-array name="unit_cost_types">
+        <item>Hour</item>
+        <item>Item</item>
+        <item>Kg</item>
+        <item>Km</item>
+        <item>Minute</item>
+        <item>Person</item>
+        <item>Vehicle</item>
+    </string-array>
     <string name="image_info">No photos uploaded yet</string>
     <string name="category_title">Select Category</string>
+    <string name="phone_title">Select Contact Type</string>
+    <string name="unit_cost_title">Select Unit Cost</string>
 
 
     <!--  Service Details  -->
@@ -59,6 +71,7 @@
     <string name="label_note">Note</string>
     <string name="label_date">Date</string>
     <string name="label_time">Time</string>
+    <string name="label_amount">Amount</string>
 
     <!--  Account  -->
     <string name="btn_logout">Sign Out</string>

@@ -44,12 +44,18 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
     private ServiceViewModel serviceViewModel;
     private List<Service> serviceList;
     private ServiceAdapter adapter;
-    private EditText txtNote, txtDate, txtTime;
+    private EditText txtNote, txtDate, txtTime, txtAmount;
     private Button btnDatePicker, btnTimePicker, btnSave;
     private int mYear, mMonth, mDay, mHour, mMinute;
     private Calendar c;
     private String serviceName;
+    private int serviceCost;
     private BookingViewModel bookingViewModel;
+
+    // Used to load the 'native-lib' library on application startup.
+    static {
+        System.loadLibrary("native-lib");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +82,7 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         txtNote = findViewById(R.id.et_booking_note);
         txtDate = findViewById(R.id.et_booking_date);
         txtTime = findViewById(R.id.et_booking_time);
+        txtAmount = findViewById(R.id.et_booking_amount);
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
@@ -84,6 +91,7 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         Intent intent = getIntent();
 
         serviceName = intent.getStringExtra("SERVICE_NAME");
+        serviceCost = intent.getIntExtra("SERVICE_COST", 0);
         txtName.setText(serviceName);
 
         sharedpreference= PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
@@ -115,14 +123,19 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         String note = txtNote.getText().toString();
         String date = txtDate.getText().toString();
         String time = txtTime.getText().toString();
+        int amount = Integer.parseInt(txtAmount.getText().toString());
+        int bookingFee = calculateBookingFee(amount, serviceCost);
+
         Log.d("TimeMillis","time in millis: " + c.getTimeInMillis() + " and time in timezone: " + c.getTimeZone());
         startAlarm(serviceName, c);
         finish();
         Log.d("ActivityResult", "muncul");
-        Booking booking = new Booking(serviceName, note, date, time);
+        Booking booking = new Booking(serviceName, note, date, time, bookingFee);
         bookingViewModel.insert(booking);
         Toast.makeText(this, "Booking saved", Toast.LENGTH_SHORT).show();
     }
+
+    public native int calculateBookingFee(int amount, int cost);
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

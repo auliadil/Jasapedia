@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a'
+ninja: no work to do.

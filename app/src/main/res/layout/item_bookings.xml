@@ -41,21 +41,28 @@
                 android:id="@+id/tv_booking_note"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Booking Name"
+                android:text="Booking Note"
                 style="@style/Body2"/>
 
             <TextView
                 android:id="@+id/tv_booking_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Booking Overview"
+                android:text="Booking Date"
                 style="@style/Body2"/>
 
             <TextView
                 android:id="@+id/tv_booking_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Booking Overview"
+                android:text="Booking Time"
+                style="@style/Body2"/>
+
+            <TextView
+                android:id="@+id/tv_booking_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking Fee"
                 style="@style/Body2"/>
 
         </LinearLayout>

@@ -6,36 +6,46 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Auth" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="cloudinaryUrl" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94b9f1fc-26dd-4c93-8fda-31612a52f31f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__me_abhinay_input_currency_edittext_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cost_blue.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/json_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/json_generation_record.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/BookingDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/BookingDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cost.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hours.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hours.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_booking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_booking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_bookings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_bookings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
@@ -59,67 +69,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1362">
-              <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+            <state relative-caret-position="148">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
               <folding>
-                <element signature="e#2665#2666#0" expanded="true" />
-                <element signature="e#2692#2693#0" expanded="true" />
-                <element signature="e#2729#2730#0" expanded="true" />
-                <element signature="e#2761#2762#0" expanded="true" />
-                <element signature="e#2991#2992#0" expanded="true" />
-                <element signature="e#3022#3023#0" expanded="true" />
-                <element signature="e#3070#3071#0" expanded="true" />
-                <element signature="e#3110#3111#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1455#1456#0" expanded="true" />
+                <element signature="e#1493#1494#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/daos/ServiceDao.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/TimePickerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="120">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/DatePickerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="50" column="332" selection-start-line="50" selection-start-column="332" selection-end-line="50" selection-end-column="332" />
+            <state relative-caret-position="120">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-197">
+              <caret line="57" column="45" lean-forward="true" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+              <folding>
+                <element signature="e#1072#1073#0" expanded="true" />
+                <element signature="e#1110#1111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="67" column="40" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="40" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SplashScreenActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="38" />
+            <state relative-caret-position="131">
+              <caret line="121" column="44" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,46 +126,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
+            <state relative-caret-position="180">
+              <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding>
-                <element signature="e#8574#8592#0" expanded="true" />
+                <element signature="e#41#57#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/BookingsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-36">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+              <folding>
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_bookings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-107" />
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/UserDatabase.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_bookings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="175">
+              <caret line="61" column="47" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="47" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-711">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -186,15 +193,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>init</find>
-      <find>finish()</find>
-      <find>AddSer</find>
-      <find>AddService</find>
-      <find>Binding</find>
-      <find>binding</find>
-      <find>serviceName</find>
-      <find>fragment</find>
-      <find>text_view</find>
       <find>ProgressBar</find>
       <find>button_</find>
       <find>cancel</find>
@@ -208,7 +206,6 @@
       <find>YelpApi</find>
       <find>Glide</find>
       <find>bumptech</find>
-      <find>permission</find>
       <find>log</find>
       <find>call</find>
       <find>butter</find>
@@ -216,6 +213,16 @@
       <find>Butter</find>
       <find>intent</find>
       <find>log.d</find>
+      <find>category</find>
+      <find>categorySpinner</find>
+      <find>permission</find>
+      <find>phone</find>
+      <find>checkUser</find>
+      <find>user</find>
+      <find>SERVICE_COST</find>
+      <find>pom.xml</find>
+      <find>map</find>
+      <find>Service</find>
     </findStrings>
     <replaceStrings>
       <replace>opensans</replace>
@@ -246,14 +253,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/YelpApi.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/UserViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/SignupActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/JasapediaApp.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/AddBookingActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/AddServiceActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/helpers/NotificationHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/PreferencesUtility.java" />
@@ -271,10 +271,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/fragment_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_bookings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/fragment_bookings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_booking.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_booking.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_add_booking.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/AccountFragment.java" />
@@ -282,21 +278,32 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SignupActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/BookingDatabase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_hours.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SignupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/UserViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_booking.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_bookings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
       </list>
     </option>
   </component>
@@ -346,7 +353,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="jasapedia" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="broadcastreceivers" type="462c0819:PsiDirectoryNode" />
+              <item name="adapters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
@@ -386,6 +393,20 @@
             <path>
               <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jasapedia" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="jasapedia" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="viewmodels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="cpp" type="9a30073f:AndroidJniFolderNode" />
             </path>
             <path>
@@ -410,6 +431,20 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="activity_add_booking" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="activity_add_service" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
               <item name="activity_login" type="c431d0b8:AndroidResGroupNode" />
             </path>
             <path>
@@ -417,7 +452,41 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="activity_signup" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="fragment_bookings" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
               <item name="fragment_service_details" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="item_bookings" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="strings" type="c431d0b8:AndroidResGroupNode" />
             </path>
             <path>
               <item name="Jasapedia" type="1abcf292:AndroidViewProjectNode" />
@@ -660,12 +729,12 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49434572" weight="0.35766423" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4927302" visible="true" weight="0.35766423" />
       <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49919224" weight="0.329927" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49919224" weight="0.29781023" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5056543" side_tool="true" weight="0.35766423" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5072698" side_tool="true" weight="0.35766423" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.27445257" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49757674" weight="0.25547445" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.3270073" />
@@ -681,303 +750,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_in_left.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_save.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_account.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/JasapediaApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_services.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/YelpApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-173">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/BookingViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/ListCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="33" selection-end-line="127" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SignupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/bottomnavigation_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="47" />
-          <folding>
-            <element signature="e#634#674#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_bookings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8" />
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/ServiceViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding>
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/DatePickerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1899">
-          <caret line="214" column="36" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5872#5880#0" expanded="true" />
-            <element signature="e#6095#6103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/AccountFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/BookingsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding>
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2853#3085#0" expanded="true" />
-            <element signature="e#3084#3085#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/repositories/ServiceRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-in/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="65" column="138" selection-start-line="65" selection-start-column="138" selection-end-line="65" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="66" column="129" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="76" column="51" selection-end-line="81" selection-end-column="14" />
-          <folding>
-            <element signature="e#3058#3078#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding>
-            <element signature="e#905#1369#0" expanded="true" />
-            <element signature="e#1078#1343#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#1368#1369#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1133#1275#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1316#1700#0" expanded="true" />
-            <element signature="e#1699#1700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/native-lib.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -992,117 +764,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#41#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-565">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#2353#2586#0" expanded="true" />
-            <element signature="e#2585#2586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-711">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1362">
-          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-          <folding>
-            <element signature="e#2665#2666#0" expanded="true" />
-            <element signature="e#2692#2693#0" expanded="true" />
-            <element signature="e#2729#2730#0" expanded="true" />
-            <element signature="e#2761#2762#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3022#3023#0" expanded="true" />
-            <element signature="e#3070#3071#0" expanded="true" />
-            <element signature="e#3110#3111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SplashScreenActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/UserDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/daos/ServiceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="50" column="332" selection-start-line="50" selection-start-column="332" selection-end-line="50" selection-end-column="332" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1112,16 +779,384 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
+        <state relative-caret-position="350">
+          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
           <folding>
-            <element signature="e#8574#8592#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+            <element signature="e#3110#3111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="76" column="42" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-in/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/daos/ServiceDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/daos/ServiceDao_Impl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="219" selection-start-line="219" selection-end-line="219" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_email_blue.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_location_blue.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_image.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_home.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_watch_blue.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_hours.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_save.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MapActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="60" column="52" lean-forward="true" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+          <folding>
+            <element signature="e#1782#1783#0" expanded="true" />
+            <element signature="e#1828#1829#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SplashScreenActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="39" column="50" lean-forward="true" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/JasapediaApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/UserViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_service.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="127" column="41" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.6.2/c212ba1ef76db28d96768c74991343e4794b639f/converter-gson-2.6.2.jar!/META-INF/maven/com.squareup.retrofit2/converter-gson/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="105" column="44" selection-start-line="105" selection-start-column="44" selection-end-line="105" selection-end-column="44" />
+          <folding>
+            <element signature="e#5294#5314#0" expanded="true" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_service_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="115" column="45" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_booking.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="76" column="17" lean-forward="true" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/viewmodels/BookingViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/models/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+          <folding>
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1621#1622#0" expanded="true" />
+            <element signature="e#1670#1671#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/ServiceDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="50" column="124" selection-start-line="50" selection-start-column="124" selection-end-line="50" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/databases/BookingDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddServiceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="248" column="38" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_bookings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107" />
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_bookings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/BookingsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/BookingAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/adapters/ServiceAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="57" column="45" lean-forward="true" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+          <folding>
+            <element signature="e#1072#1073#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/ServiceDetailsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#1493#1494#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/DatePickerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/fragments/TimePickerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ui/cs/mobileprogramming/muhammadauliaadil/jasapedia/activities/AddBookingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="121" column="44" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="e#41#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -132,6 +132,9 @@ dependencies {
 
     // Mapbox
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.5.0'
+
+    // Currency Edit Text
+    implementation 'me.abhinay.input:currency-edittext:1.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

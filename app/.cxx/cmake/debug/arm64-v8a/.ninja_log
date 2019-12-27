@@ -1,0 +1,5 @@
+# ninja log v5
+0	6885	1577341597	CMakeFiles/native-lib.dir/native-lib.cpp.o	d42dc73b495f0bf2
+6887	7093	1577341598	/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	4342dfb1f21b0ebf
+1	1943	1577343187	CMakeFiles/native-lib.dir/native-lib.cpp.o	d42dc73b495f0bf2
+1943	2364	1577343188	/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	4342dfb1f21b0ebf

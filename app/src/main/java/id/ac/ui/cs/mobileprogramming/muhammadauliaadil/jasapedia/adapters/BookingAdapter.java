@@ -45,6 +45,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
         holder.tvBookingNote.setText(currentBooking.getNote());
         holder.tvBookingDate.setText(currentBooking.getDate());
         holder.tvBookingTime.setText(currentBooking.getTime());
+        holder.tvBookingFee.setText(currentBooking.getBookingFee());
     }
 
     @Override
@@ -62,7 +63,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
     }
 
     class BookingHolder extends RecyclerView.ViewHolder {
-        private TextView tvServiceName, tvBookingNote, tvBookingDate, tvBookingTime;
+        private TextView tvServiceName, tvBookingNote, tvBookingDate, tvBookingTime, tvBookingFee;
         private ImageView ivBookingImage;
         private RelativeLayout parentLayout;
 
@@ -73,6 +74,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
             ivBookingImage = itemView.findViewById(R.id.iv_booking_image);
             tvBookingDate = itemView.findViewById(R.id.tv_booking_date);
             tvBookingTime = itemView.findViewById(R.id.tv_booking_time);
+            tvBookingFee = itemView.findViewById(R.id.tv_booking_fee);
             parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }

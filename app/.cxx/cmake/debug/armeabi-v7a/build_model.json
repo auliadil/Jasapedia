@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/adil/Documents/Android Projects/Jasapedia",
+      "sdkFolder": "/Users/adil/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app",
+      "makeFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/src/main/cpp/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/adil/Documents/Android Projects/Jasapedia/.cxx",
+      "cxxFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx",
+      "ndkFolder": "/Users/adil/Library/Android/sdk/ndk/20.1.5948944",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 22,
+  "cxxBuildFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a",
+  "jsonFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a",
+  "objFolder": "/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/debug/obj/armeabi-v7a",
+  "buildCommandFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/build_command.txt",
+  "buildOutputFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/build_output.txt",
+  "modelOutputFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/build_generation_state.json",
+    "cacheKeyFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cxx/debug/armeabi-v7a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/debug/armeabi-v7a/compile_commands.json"
+}

@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.daos.ServiceDao;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 
-@Database(entities = {Service.class}, version = 1, exportSchema = false)
+@Database(entities = {Service.class}, version = 3, exportSchema = false)
 public abstract class ServiceDatabase extends RoomDatabase {
     private static ServiceDatabase instance;
 

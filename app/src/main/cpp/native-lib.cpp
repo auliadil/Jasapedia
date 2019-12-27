@@ -6,7 +6,7 @@
 #include <string>
 
 extern "C" JNIEXPORT jint JNICALL
-Java_id_ac_ui_cs_mobileprogramming_muhammadauliaadil_jasapedia_AddBookingActivity_calculationBookingCost(
+Java_id_ac_ui_cs_mobileprogramming_muhammadauliaadil_jasapedia_activities_AddBookingActivity_calculateBookingFee(
         JNIEnv* env,
         jobject /* this */,
         jint a,

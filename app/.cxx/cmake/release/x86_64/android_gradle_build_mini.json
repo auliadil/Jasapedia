@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/Users/adil/Library/Android/sdk/ndk/20.1.5948944/build/cmake/platforms.cmake",
+    "/Users/adil/Documents/Android Projects/Jasapedia/app/src/main/cpp/CMakeLists.txt",
+    "/Users/adil/Library/Android/sdk/ndk/20.1.5948944/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/adil/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/release/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/Users/adil/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/release/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Release-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/adil/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/adil/Documents/Android Projects/Jasapedia/app/.cxx/cmake/release/x86_64\" native-lib",
+      "abi": "x86_64",
+      "output": "/Users/adil/Documents/Android Projects/Jasapedia/app/build/intermediates/cmake/release/obj/x86_64/libnative-lib.so"
+    }
+  }
+}

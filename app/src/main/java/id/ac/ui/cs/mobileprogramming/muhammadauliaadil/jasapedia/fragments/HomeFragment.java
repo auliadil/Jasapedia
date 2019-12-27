@@ -27,6 +27,7 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.ServiceViewModel;
 
 import static android.app.Activity.RESULT_OK;
+import static id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.AddServiceActivity.*;
 
 
 public class HomeFragment extends Fragment {
@@ -87,16 +88,18 @@ public class HomeFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == ADD_SERVICE_REQUEST && resultCode == RESULT_OK) {
-            String name = data.getStringExtra(AddServiceActivity.EXTRA_NAME);
-            String overview = data.getStringExtra(AddServiceActivity.EXTRA_OVERVIEW);
-            double rating = data.getDoubleExtra(AddServiceActivity.EXTRA_RATING, 0);
-            String category = data.getStringExtra(AddServiceActivity.EXTRA_CATEGORY);
-            String location = data.getStringExtra(AddServiceActivity.EXTRA_LOCATION);
-            String hours = data.getStringExtra(AddServiceActivity.EXTRA_HOURS);
-            String phoneNumber = data.getStringExtra(AddServiceActivity.EXTRA_PHONE_NUMBER);
-            String imageUrl = data.getStringExtra(AddServiceActivity.EXTRA_IMAGE_URL);
+            String name = data.getStringExtra(EXTRA_NAME);
+            String overview = data.getStringExtra(EXTRA_OVERVIEW);
+            double rating = data.getDoubleExtra(EXTRA_RATING, 0);
+            String category = data.getStringExtra(EXTRA_CATEGORY);
+            String location = data.getStringExtra(EXTRA_LOCATION);
+            String hours = data.getStringExtra(EXTRA_HOURS);
+            String phoneNumber = data.getStringExtra(EXTRA_PHONE_NUMBER);
+            String imageUrl = data.getStringExtra(EXTRA_IMAGE_URL);
+            int cost = data.getIntExtra(EXTRA_COST, 0);
+            String unitCost = data.getStringExtra(EXTRA_UNIT_COST);
 
-            Service service = new Service(name, overview, rating, category, location, hours, phoneNumber, imageUrl);
+            Service service = new Service(name, overview, rating, category, location, hours, phoneNumber, imageUrl, cost, unitCost);
             serviceViewModel.insert(service);
 
             Toast.makeText(getContext(), "Service saved and contact added to your device", Toast.LENGTH_LONG).show();
