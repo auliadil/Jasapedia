@@ -27,52 +27,26 @@
                 android:id="@+id/tv_services"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Account"
+                android:text="Setting"
                 android:layout_marginTop="24px"
                 style="@style/Headline1"/>
 
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/opensans_extrabold"
-                android:text="User Name"
-                android:textSize="24sp"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:id="@+id/user_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="User Address"
-                android:textSize="14sp"
-                android:drawableLeft="@drawable/ic_location_blue"
-                android:drawablePadding="8dp" />
-
-            <TextView
-                android:id="@+id/user_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="User Email"
-                android:textSize="14sp"
-                android:drawableLeft="@drawable/ic_email_blue"
-                android:drawablePadding="8dp" />
-
-            <TextView
-                android:id="@+id/user_phone_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="User Phone Number"
-                android:textSize="14sp"
-                android:drawableLeft="@drawable/ic_phone_blue"
-                android:drawablePadding="8dp" />
+                android:layout_marginTop="20dp"
+                android:text="Start Song"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Stop Song"/>
+
+            <Button
+                android:id="@+id/btn_signout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -80,9 +54,6 @@
 
         </LinearLayout>
 
-        <Divider>
-
-        </Divider>
     </ScrollView>
 
 </FrameLayout>

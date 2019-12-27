@@ -3,7 +3,6 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;

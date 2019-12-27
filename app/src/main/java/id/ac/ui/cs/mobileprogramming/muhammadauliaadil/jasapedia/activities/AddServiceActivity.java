@@ -185,16 +185,15 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     REQUEST_CODE_GALLERY
             );
         }
-        if (v == btnSave) {
-            saveService();
-        }
-
         if (v == etPhoneNumber) {
             ActivityCompat.requestPermissions(
                     AddServiceActivity.this,
                     new String[]{Manifest.permission.WRITE_CONTACTS},
                     REQUEST_CODE_CONTACT
             );
+        }
+        if (v == btnSave) {
+            saveService();
         }
     }
 
@@ -205,7 +204,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_CODE_GALLERY);
-                Toast.makeText(getApplicationContext(), "Permission has been granted!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Read storage permission has been granted!", Toast.LENGTH_SHORT).show();
             }
             else {
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -218,7 +217,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     }
                 };
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("You need to allow access to permission");
                 builder.setIcon(R.drawable.ic_error_blue);
                 builder.setMessage("By giving permission, you can select and upload image on your device to be saved as the image of the service you are currently creating")
                         .setPositiveButton("OK", dialogClickListener).show();
@@ -226,7 +224,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
             return;
         } else if (requestCode == REQUEST_CODE_CONTACT) {
             if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(getApplicationContext(), "Permission has been granted!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Write contact permission has been granted!", Toast.LENGTH_SHORT).show();
             }
             else {
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -239,7 +237,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     }
                 };
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("You need to allow access to permission");
                 builder.setIcon(R.drawable.ic_error_blue);
                 builder.setMessage("By giving permission, you can add this service phone number to your contacts")
                         .setPositiveButton("OK", dialogClickListener).show();

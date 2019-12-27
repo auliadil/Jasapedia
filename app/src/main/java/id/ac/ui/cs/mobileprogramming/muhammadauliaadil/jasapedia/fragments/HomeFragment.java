@@ -68,12 +68,12 @@ public class HomeFragment extends Fragment {
         btnAddService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            if(checkNetwork() == false) {
-                showAlertNetwork();
-            } else {
-                Intent intent = new Intent(getContext(), AddServiceActivity.class);
-                startActivityForResult(intent, ADD_SERVICE_REQUEST);
-            }
+                if(checkNetwork() == false) {
+                    showAlertNetwork();
+                } else {
+                    Intent intent = new Intent(getContext(), AddServiceActivity.class);
+                    startActivityForResult(intent, ADD_SERVICE_REQUEST);
+                }
             }
         });
 
@@ -95,7 +95,8 @@ public class HomeFragment extends Fragment {
     }
 
     private boolean checkNetwork() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
@@ -106,17 +107,18 @@ public class HomeFragment extends Fragment {
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        // Enable button clicked
-                        WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                        wifiManager.setWifiEnabled(true);
-                        break;
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    // Enable button clicked
+                    WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext()
+                            .getSystemService(Context.WIFI_SERVICE);
+                    wifiManager.setWifiEnabled(true);
+                    break;
 
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        // Cancel button clicked
-                        break;
-                }
+                case DialogInterface.BUTTON_NEGATIVE:
+                    // Cancel button clicked
+                    break;
+            }
             }
         };
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());

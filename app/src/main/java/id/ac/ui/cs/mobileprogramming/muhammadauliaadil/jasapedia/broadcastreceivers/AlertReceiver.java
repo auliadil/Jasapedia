@@ -12,17 +12,10 @@ import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.helpers.Notific
 
 public class AlertReceiver extends BroadcastReceiver {
 
-    private String title, text;
-
-    public void init(String title, String text) {
-        this.title = title;
-        this.text = text;
-    }
-
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED")) {
-            NotificationHelper notificationHelper = new NotificationHelper(context, title, text);
+            NotificationHelper notificationHelper = new NotificationHelper(context);
             NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
             notificationHelper.getManager().notify(1, nb.build());
         }

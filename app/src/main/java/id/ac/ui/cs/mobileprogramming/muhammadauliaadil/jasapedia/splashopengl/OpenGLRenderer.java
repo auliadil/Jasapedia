@@ -28,3 +28,4 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
         blueValue = ((Math.sin(System.currentTimeMillis() * 2 * Math.PI / FLASH_DURATION) * 0.5) + 0.5);
     }
 }
+

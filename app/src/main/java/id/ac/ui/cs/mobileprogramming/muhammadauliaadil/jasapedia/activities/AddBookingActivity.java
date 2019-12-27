@@ -57,6 +57,8 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         System.loadLibrary("native-lib");
     }
 
+    public native int calculateBookingFee(int amount, int cost);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,8 +140,6 @@ public class AddBookingActivity extends AppCompatActivity implements View.OnClic
         bookingViewModel.insert(booking);
         Toast.makeText(this, "Booking saved", Toast.LENGTH_SHORT).show();
     }
-
-    public native int calculateBookingFee(int amount, int cost);
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

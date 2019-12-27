@@ -12,7 +12,6 @@ import androidx.core.app.NotificationCompat;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
 
-
 public class NotificationHelper extends ContextWrapper {
     public static final String channelID = "Jasapedia";
     public static final String channelName = "Jasapedia Channel";
@@ -21,10 +20,10 @@ public class NotificationHelper extends ContextWrapper {
 
     private NotificationManager mManager;
 
-    public NotificationHelper(Context base, String title, String text) {
+    public NotificationHelper(Context base) {
         super(base);
-        this.title = title;
-        this.text = text;
+        this.title = "Your booking has been ready";
+        this.text = "It's time to use your services!";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createChannel();
         }
@@ -33,7 +32,6 @@ public class NotificationHelper extends ContextWrapper {
     @TargetApi(Build.VERSION_CODES.O)
     private void createChannel() {
         NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_HIGH);
-
         getManager().createNotificationChannel(channel);
     }
 
@@ -41,20 +39,16 @@ public class NotificationHelper extends ContextWrapper {
         if (mManager == null) {
             mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
-
         return mManager;
     }
 
     public NotificationCompat.Builder getChannelNotification() {
-
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle(title)
                 .setContentText(text)
                 .setSmallIcon(R.drawable.ic_logo_jasapedia);
-
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         builder.setSound(alarmSound);
-
         return builder;
     }
 }
