@@ -3,15 +3,12 @@ package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Network;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -24,7 +21,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.CheckInternetService;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.AccountFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.BookingsFragment;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments.HomeFragment;
 

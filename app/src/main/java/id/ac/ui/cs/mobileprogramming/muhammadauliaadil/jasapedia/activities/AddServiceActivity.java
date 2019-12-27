@@ -115,6 +115,12 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         etCost.setDecimals(false);
         //Make sure that Decimals is set as false if a custom Separator is used
         etCost.setSeparator(".");
+
+        ActivityCompat.requestPermissions(
+                AddServiceActivity.this,
+                new String[]{Manifest.permission.WRITE_CONTACTS},
+                REQUEST_CODE_CONTACT
+        );
         btnSave = findViewById(R.id.save_service);
 
         categorySpinner = findViewById(R.id.spinner_category);
@@ -183,13 +189,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                     AddServiceActivity.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     REQUEST_CODE_GALLERY
-            );
-        }
-        if (v == etPhoneNumber) {
-            ActivityCompat.requestPermissions(
-                    AddServiceActivity.this,
-                    new String[]{Manifest.permission.WRITE_CONTACTS},
-                    REQUEST_CODE_CONTACT
             );
         }
         if (v == btnSave) {
@@ -310,9 +309,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                 public void onSuccess(String requestId, Map resultData) {
                     cloudinaryUrl[0] = resultData.get("secure_url").toString();
                     Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl[0]);
-                    data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
-                    Log.d("CLOUDINARY EXTRA", "onSuccess: "+ cloudinaryUrl[0]);
-                    setResult(RESULT_OK, data);
                 }
 
                 @Override
@@ -328,6 +324,9 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
                 }
             }).dispatch();
 
+        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
+        Log.d("CLOUDINARY EXTRA", "onSuccess: "+ cloudinaryUrl[0]);
+        setResult(RESULT_OK, data);
         saveContact();
         finish();
     }
