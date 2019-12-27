@@ -13,7 +13,7 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        GLES20.glClearColor(0,0, (float) blueValue, 0);
+        GLES20.glClearColor(0,0, (float) blueValue, 1);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        GLES20.glClearColor(0,0, (float) blueValue, 0);
+        GLES20.glClearColor(0,0, (float) blueValue, 1);
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         blueValue = ((Math.sin(System.currentTimeMillis() * 2 * Math.PI / FLASH_DURATION) * 0.5) + 0.5);
     }

@@ -1,6 +1,12 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.fragments;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -62,8 +68,12 @@ public class HomeFragment extends Fragment {
         btnAddService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            if(checkNetwork() == false) {
+                showAlertNetwork();
+            } else {
                 Intent intent = new Intent(getContext(), AddServiceActivity.class);
                 startActivityForResult(intent, ADD_SERVICE_REQUEST);
+            }
             }
         });
 
@@ -82,6 +92,39 @@ public class HomeFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private boolean checkNetwork() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+    }
+
+    public void showAlertNetwork() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        // Enable button clicked
+                        WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                        wifiManager.setWifiEnabled(true);
+                        break;
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        // Cancel button clicked
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("You need to enable WIFI to create a service");
+        builder.setIcon(R.drawable.ic_error_blue);
+        builder.setMessage("By enabling WiFi, you will be able to create a service and save image to cloudinary")
+                .setPositiveButton("Enable", dialogClickListener)
+                .setNegativeButton("Cancel", dialogClickListener).show();
     }
 
     @Override

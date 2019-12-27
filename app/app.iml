@@ -147,9 +147,8 @@
     <orderEntry type="library" name="Gradle: com.squareup.picasso:picasso:2.5.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.6.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.6.2@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.15.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-sdk-geojson:4.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.5@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.navigation:navigation-ui:2.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.0.0@aar" level="project" />
@@ -167,8 +166,6 @@
     <orderEntry type="library" name="Gradle: androidx.room:room-rxjava2:2.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.recyclerview:recyclerview:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-ui:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-sdk:8.5.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-telemetry:4.5.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-utils:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.loader:loader:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.activity:activity:1.0.0@aar" level="project" />
@@ -213,9 +210,6 @@
     <orderEntry type="library" name="Gradle: androidx.constraintlayout:constraintlayout:1.1.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.hajiyevelnur92:intentanimation:1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-core:1.3.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-gestures:0.5.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.mapbox.mapboxsdk:mapbox-android-accounts:0.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: me.abhinay.input:currency-edittext:1.1@aar" level="project" />
   </component>
 </module>

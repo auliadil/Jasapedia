@@ -15,14 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-
-import java.util.Objects;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.AddBookingActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.R;
-import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.activities.MapActivity;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.models.Service;
 import id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.viewmodels.BookingViewModel;
 

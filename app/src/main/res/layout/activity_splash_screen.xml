@@ -7,12 +7,10 @@
     tools:context=".activities.SplashScreenActivity"
     android:background="#0881D0">
 
-    <android.opengl.GLSurfaceView
+    <id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.splashopengl.OpenGLView
         android:id="@+id/openGL"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.opengl.GLSurfaceView>
+        android:layout_height="match_parent"/>
 
     <ImageView
         android:id="@+id/imageView"

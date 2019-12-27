@@ -9,13 +9,17 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
@@ -26,7 +30,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +41,6 @@ import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 import java.util.Map;
 
@@ -245,23 +247,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
             return;
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
-    public void showAlert() {
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            switch (which){
-                case DialogInterface.BUTTON_POSITIVE:
-                    break;
-                }
-            }
-        };
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("You need to allow access to permission");
-        builder.setIcon(R.drawable.ic_error_blue);
-        builder.setMessage("By giving permission, you can select and upload image on your device to be saved as the image of the service you are currently creating")
-                .setPositiveButton("OK", dialogClickListener).show();
     }
 
     @Override
