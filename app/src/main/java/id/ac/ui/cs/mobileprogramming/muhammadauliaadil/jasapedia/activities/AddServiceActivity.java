@@ -76,7 +76,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
     private Uri selectedUri;
     private Intent data;
     private TextView textViewResult;
-    private String[] cloudinaryUrl;
+    private String cloudinaryUrl;
 
     public static final String EXTRA_NAME = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_NAME";
     public static final String EXTRA_OVERVIEW = "id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.EXTRA_OVERVIEW";
@@ -103,10 +103,8 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         etName = findViewById(R.id.et_service_name);
         etOverview = findViewById(R.id.et_service_overview);
         rbRating = findViewById(R.id.rb_service_rating);
-//        etCategory = findViewById(R.id.et_service_category);
         etLocation = findViewById(R.id.et_service_location);
         etHours = findViewById(R.id.et_service_hours);
-//        etPhoneNumber = findViewById(R.id.et_service_phone_number);
         etCost = findViewById(R.id.et_cost);
 
         etCost.setCurrency(INDONESIA);
@@ -277,7 +275,7 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
         String phoneNumber = etPhoneNumber.getText().toString();
         int cost = etCost.getCleanIntValue();
         String unitCost = (String) unitCostSpinner.getSelectedItem();
-        cloudinaryUrl = new String[1];
+        cloudinaryUrl = "url";
 
         data = new Intent();
         data.putExtra(EXTRA_NAME, name);
@@ -302,19 +300,23 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
                 @Override
                 public void onProgress(String requestId, long bytes, long totalBytes) {
-
                 }
 
                 @Override
                 public void onSuccess(String requestId, Map resultData) {
-                    cloudinaryUrl[0] = resultData.get("secure_url").toString();
-                    Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl[0]);
+                    cloudinaryUrl = resultData.get("secure_url").toString();
+                    Log.d("CLOUDINARY", "onSuccess: "+ cloudinaryUrl);
+                    data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl);
+                    setResult(RESULT_OK, data);
+                    saveContact();
+                    finish();
                 }
 
                 @Override
                 public void onError(String requestId, ErrorInfo error) {
                     Toast.makeText(AddServiceActivity.this,"Upload Error", Toast.LENGTH_SHORT).show();
                     Log.v("ERROR!!", error.getDescription());
+                    finish();
 
                 }
 
@@ -323,12 +325,6 @@ public class AddServiceActivity extends AppCompatActivity implements View.OnClic
 
                 }
             }).dispatch();
-
-        data.putExtra(EXTRA_IMAGE_URL, cloudinaryUrl[0]);
-        Log.d("CLOUDINARY EXTRA", "onSuccess: "+ cloudinaryUrl[0]);
-        setResult(RESULT_OK, data);
-        saveContact();
-        finish();
     }
 
     public void saveContact() {

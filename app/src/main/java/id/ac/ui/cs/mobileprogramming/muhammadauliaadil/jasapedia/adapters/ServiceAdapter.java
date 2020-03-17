@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.muhammadauliaadil.jasapedia.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -33,10 +35,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         this.context = context;
     }
 
-    public ServiceAdapter(Context context, List<Service> services) {
-        this.services = services;
-    }
-
     @NonNull
     @Override
     public ServiceHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,11 +49,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
         holder.tvServiceName.setText(currentService.getName());
         holder.tvServiceOverview.setText(currentService.getOverview());
         holder.serviceRating.setRating((float) currentService.getRating());
-        Glide.with(context)
-                .asBitmap()
-                .load(currentService.getImageUrl())
-                .fitCenter()
-                .into(holder.ivServiceImage);
+        Picasso.get().load(currentService.getImageUrl()).fit().centerCrop().into(holder.ivServiceImage);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +61,9 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceH
                 ft.commit();
             }
         });
+        if(currentService.getImageUrl() != null) {
+            Log.d("image url: ", currentService.getImageUrl());
+        }
     }
 
     @Override

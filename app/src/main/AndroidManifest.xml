@@ -26,7 +26,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBEdoH9Qo8dqw0zbCAPc8Hj18LViToUEFU" />
 
-        <activity android:name=".activities.AddBookingActivity" />
+        <activity android:name=".activities.AddBookingActivity"
+            android:parentActivityName=".activities.MainActivity"/>
         <activity android:name=".activities.SignupActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity

@@ -135,6 +135,7 @@ public class HomeFragment extends Fragment {
 
         if (requestCode == ADD_SERVICE_REQUEST && resultCode == RESULT_OK) {
             String name = data.getStringExtra(EXTRA_NAME);
+            Log.d("CLOUDINARY get name", "onSuccess: "+ name);
             String overview = data.getStringExtra(EXTRA_OVERVIEW);
             double rating = data.getDoubleExtra(EXTRA_RATING, 0);
             String category = data.getStringExtra(EXTRA_CATEGORY);
@@ -142,7 +143,7 @@ public class HomeFragment extends Fragment {
             String hours = data.getStringExtra(EXTRA_HOURS);
             String phoneNumber = data.getStringExtra(EXTRA_PHONE_NUMBER);
             String imageUrl = data.getStringExtra(EXTRA_IMAGE_URL);
-            Log.d("CLOUDINARY GET EXTRA", "onSuccess: "+ imageUrl);
+            Log.d("CLOUDINARY get image", "onSuccess: "+ imageUrl);
             int cost = data.getIntExtra(EXTRA_COST, 0);
             String unitCost = data.getStringExtra(EXTRA_UNIT_COST);
 
